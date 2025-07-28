@@ -1,0 +1,10 @@
+project_id = "ydhvpmgldkajebfdahxh"
+
+[functions.process-order]
+verify_jwt = false
+
+[functions.send-order-notification]
+verify_jwt = false
+
+[functions.get-pricing-info]
+verify_jwt = false
