@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ShoppingCart, MessageCircle, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCart } from '@/contexts/CartContext';
@@ -9,6 +9,8 @@ import { toast } from 'sonner';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { CONTACT_INFO } from '@/config/constants';
+import { getSeasonalCopywriting, getCurrentFestival } from '@/utils/festivalSeason';
 
 interface Package {
   id: number;
@@ -24,6 +26,14 @@ interface Package {
 const Packages: React.FC = () => {
   const { t, language } = useLanguage();
   const { addToCart } = useCart();
+  const [seasonalCopy, setSeasonalCopy] = useState(getSeasonalCopywriting());
+  const [currentFestival, setCurrentFestival] = useState(getCurrentFestival());
+
+  // Update seasonal content on component mount
+  useEffect(() => {
+    setSeasonalCopy(getSeasonalCopywriting());
+    setCurrentFestival(getCurrentFestival());
+  }, []);
 
   const packagesData: Package[] = [
     {
@@ -105,7 +115,6 @@ const Packages: React.FC = () => {
   ];
 
   const handleAddToCart = (pkg: Package) => {
-    console.log(`Adding package ${pkg.id} to cart`);
     
     addToCart({
       id: pkg.id,
@@ -131,7 +140,7 @@ const Packages: React.FC = () => {
         ? `Hi! I'm interested in the ${packageName} package from MercunMurah.`
         : `Hi! Saya berminat dengan pakej ${packageName} dari MercunMurah.`
     );
-    window.open(`https://wa.me/+60137340415?text=${message}`, '_blank');
+    window.open(`https://wa.me/${CONTACT_INFO.whatsappNumber}?text=${message}`, '_blank');
   };
 
   return (
@@ -142,12 +151,14 @@ const Packages: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold explosive-text mb-6">
-            {language === 'en' ? 'Fireworks Packages' : 'Pakej Bunga Api'}
+            {currentFestival 
+              ? `Pakej Bunga Api ${currentFestival.name} Wedding | Bundle Mercun Murah Malaysia`
+              : 'Pakej Bunga Api Wedding Festival | Bundle Mercun Murah Malaysia'}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            {language === 'en'
-              ? 'Special curated packages for every celebration. Save more when you buy in bundles!'
-              : 'Pakej istimewa yang disusun untuk setiap perayaan. Jimat lebih apabila anda beli dalam bundle!'
+            {currentFestival 
+              ? `Pakej sparklers wedding, mercun ${currentFestival.name.toLowerCase()}. Jimat 30% dengan bundle festival. ${currentFestival.daysUntil > 0 ? `Persediaan ${currentFestival.name} - ${currentFestival.daysUntil} hari lagi!` : `Selamat ${currentFestival.name}!`} Free delivery KL Shah Alam Johor.`
+              : 'Pakej sparklers wedding, bundle festival. Jimat 30% dengan pakej combo. Harga borong untuk event besar. Free delivery KL Shah Alam Johor.'
             }
           </p>
         </div>

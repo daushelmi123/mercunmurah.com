@@ -10,6 +10,7 @@ import ProductCard from '@/components/ProductCard';
 import VideoDialog from '@/components/VideoDialog';
 import FlyingCartAnimation from '@/components/FlyingCartAnimation';
 import { toast } from 'sonner';
+import { getSeasonalCopywriting, getCurrentFestival } from '@/utils/festivalSeason';
 
 const Fireworks: React.FC = () => {
   const { language } = useLanguage();
@@ -25,6 +26,12 @@ const Fireworks: React.FC = () => {
     startPosition: { x: 0, y: 0 },
     productImage: ''
   });
+  const [seasonalCopy, setSeasonalCopy] = useState(getSeasonalCopywriting());
+
+  // Update seasonal content on component mount
+  useEffect(() => {
+    setSeasonalCopy(getSeasonalCopywriting());
+  }, []);
 
   // Filter products by selected section
   const filteredProducts = selectedSection === 'all' 
@@ -199,7 +206,7 @@ const Fireworks: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold explosive-text mb-6">
-              {language === 'en' ? 'Our Fireworks Collection' : 'Koleksi Bunga Api Kami'}
+              {seasonalCopy.mainHeading[language]} | Online
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               {language === 'en'

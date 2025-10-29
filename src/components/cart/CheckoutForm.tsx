@@ -70,13 +70,8 @@ const CheckoutForm: React.FC = () => {
   const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    console.log('=== CHECKOUT STARTED ===');
-    console.log('Cart Items:', cartItems);
-    console.log('Checkout Data:', checkoutData);
-    console.log('Delivery Date:', deliveryDate);
     
     if (!deliveryDate) {
-      console.log('ERROR: No delivery date selected');
       toast({
         title: language === 'en' ? 'Date Required' : 'Tarikh Diperlukan',
         description: language === 'en' 
@@ -90,14 +85,8 @@ const CheckoutForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting order with data:', { 
-        cartItems: cartItems.length, 
-        checkoutData: checkoutData.name,
-        deliveryDate: deliveryDate.toISOString() 
-      });
       
       // Call backend edge function for secure order processing
-      console.log('About to call supabase.functions.invoke...');
       
       const result = await supabase.functions.invoke('process-order', {
         body: {
@@ -107,19 +96,13 @@ const CheckoutForm: React.FC = () => {
         }
       });
 
-      console.log('Full supabase response:', result);
       const { data: orderResult, error: orderError } = result;
 
-      console.log('Order result:', orderResult);
-      console.log('Order error:', orderError);
-
       if (orderError) {
-        console.error('Order processing error:', orderError);
         throw new Error(`Failed to process order: ${orderError.message}`);
       }
 
       if (!orderResult?.success) {
-        console.error('Order result not successful:', orderResult);
         throw new Error(orderResult?.error || 'Order processing failed - no success flag');
       }
 
@@ -133,7 +116,6 @@ const CheckoutForm: React.FC = () => {
       });
 
       if (notificationError) {
-        console.warn('Notification failed but order is saved:', notificationError);
       }
 
       toast({
@@ -146,7 +128,6 @@ const CheckoutForm: React.FC = () => {
       clearCart();
       
     } catch (error) {
-      console.error('Order processing error:', error);
       toast({
         title: language === 'en' ? 'Order Failed' : 'Pesanan Gagal',
         description: language === 'en' 

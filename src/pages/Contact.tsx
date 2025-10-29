@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, MessageCircle, Send, Clock } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -7,6 +7,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { CONTACT_INFO } from '@/config/constants';
+import { getSeasonalCopywriting, getCurrentFestival } from '@/utils/festivalSeason';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
@@ -17,6 +20,14 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
+  const [seasonalCopy, setSeasonalCopy] = useState(getSeasonalCopywriting());
+  const [currentFestival, setCurrentFestival] = useState(getCurrentFestival());
+
+  // Update seasonal content on component mount
+  useEffect(() => {
+    setSeasonalCopy(getSeasonalCopywriting());
+    setCurrentFestival(getCurrentFestival());
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -25,18 +36,45 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
-    alert(language === 'en' 
-      ? 'Thank you for your message! We will get back to you soon.'
-      : 'Terima kasih atas mesej anda! Kami akan menghubungi anda tidak lama lagi.'
-    );
-    setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+    
+    try {
+      // Send to Supabase Edge Function (secure like order system)
+      const { data, error } = await supabase.functions.invoke('contact-form', {
+        body: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          source: 'Contact Form',
+          timestamp: new Date().toISOString(),
+          userAgent: navigator.userAgent
+        }
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      alert(language === 'en' 
+        ? 'Thank you for your message! We will get back to you soon.'
+        : 'Terima kasih atas mesej anda! Kami akan menghubungi anda tidak lama lagi.'
+      );
+      setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+      
+    } catch (error) {
+      console.error('Error sending form:', error);
+      alert(language === 'en'
+        ? 'Sorry, there was an error sending your message. Please try again or contact us via WhatsApp.'
+        : 'Maaf, terdapat ralat menghantar mesej anda. Sila cuba lagi atau hubungi kami melalui WhatsApp.'
+      );
+    }
   };
 
   const handleWhatsAppContact = () => {
-    const phoneNumber = '+60137340415';
+    const phoneNumber = CONTACT_INFO.whatsappNumber;
     const message = encodeURIComponent(
       language === 'en' 
         ? 'Hi MercunMurah! I would like to inquire about your fireworks products and services.'
@@ -49,7 +87,7 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: language === 'en' ? 'Phone' : 'Telefon',
-      info: '+60 12-345 6789',
+      info: '+60137340415',
       description: language === 'en' ? 'Call us anytime' : 'Hubungi kami bila-bila masa'
     },
     {
@@ -80,12 +118,14 @@ const Contact: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold explosive-text mb-6">
-            {language === 'en' ? 'Contact Us' : 'Hubungi Kami'}
+            {currentFestival 
+              ? `Hubungi MercunMurah | Kedai Bunga Api ${currentFestival.name} KL Shah Alam Johor | WhatsApp +60137340415`
+              : 'Hubungi MercunMurah | Kedai Bunga Api Wedding KL Shah Alam Johor | WhatsApp +60137340415'}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            {language === 'en'
-              ? 'Have questions about our fireworks? Need help with permits? We\'re here to help!'
-              : 'Ada soalan tentang bunga api kami? Perlukan bantuan dengan permit? Kami di sini untuk membantu!'
+            {currentFestival 
+              ? `Pembekal bunga api murah Malaysia. Jual mercun ${currentFestival.name.toLowerCase()}, wedding, sparklers. Borong & runcit KL, Shah Alam, Johor. ${currentFestival.daysUntil > 0 ? `${currentFestival.name} dalam ${currentFestival.daysUntil} hari!` : `Selamat ${currentFestival.name}!`} Permit guidance percuma.`
+              : 'Pembekal bunga api murah Malaysia. Jual mercun wedding, sparklers cantik. Borong & runcit KL, Shah Alam, Johor Bahru. Permit guidance percuma.'
             }
           </p>
         </div>
