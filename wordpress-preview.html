@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercun Meriah Shop - WordPress Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .flying-cart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .toast {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #7c2d12 0%, #991b1b 50%, #ea580c 100%);
+        }
+        
+        .backdrop-blur {
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translate3d(0,0,0);
+            }
+            40%, 43% {
+                transform: translate3d(0, -30px, 0);
+            }
+            70% {
+                transform: translate3d(0, -15px, 0);
+            }
+            90% {
+                transform: translate3d(0, -4px, 0);
+            }
+        }
+        
+        .bounce {
+            animation: bounce 1s;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black/20 backdrop-blur border-b border-red-500/30 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-white">Mercun Meriah Shop</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-white hover:text-red-300 transition-colors">Home</a>
+                    <a href="#" class="text-white hover:text-red-300 transition-colors">Products</a>
+                    <a href="#" class="text-white hover:text-red-300 transition-colors">Cart (<span id="cart-count">0</span>)</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <select id="language-select" class="bg-red-800 text-white px-3 py-1 rounded">
+                        <option value="en">English</option>
+                        <option value="ms">Bahasa Malaysia</option>
+                    </select>
+                    
+                    <button id="mobile-menu-btn" class="md:hidden text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="mobile-menu" class="md:hidden hidden py-4">
+                <a href="#" class="block text-white hover:text-red-300 py-2">Home</a>
+                <a href="#" class="block text-white hover:text-red-300 py-2">Products</a>
+                <a href="#" class="block text-white hover:text-red-300 py-2">Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-4" id="hero-title">
+                Premium Fireworks Collection
+            </h2>
+            <p class="text-xl text-red-100 mb-8" id="hero-subtitle">
+                Light up your celebrations with our spectacular fireworks
+            </p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 backdrop-blur border-t border-red-500/30 mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4" id="contact-title">Contact Us</h3>
+                    <p class="text-red-100 mb-2">WhatsApp: +60123456789</p>
+                    <p class="text-red-100">Email: info@mercunmeriah.com</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4" id="links-title">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-red-100 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-red-100 hover:text-white">Products</a></li>
+                        <li><a href="#" class="text-red-100 hover:text-white">Cart</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4" id="follow-title">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-red-100 hover:text-white">Facebook</a>
+                        <a href="#" class="text-red-100 hover:text-white">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-red-500/30 mt-8 pt-8 text-center">
+                <p class="text-red-100">&copy; 2024 Mercun Meriah Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div id="whatsapp-btn" class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/60123456789" target="_blank" 
+           class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center bounce">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 bg-black/80 backdrop-blur z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold" id="video-modal-title">Product Video</h3>
+                <button id="close-video" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="video-content">
+                <div class="aspect-video bg-gray-200 rounded flex items-center justify-center">
+                    <p class="text-gray-500">Video player would be here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                name: "Roman Candle Deluxe",
+                price: "RM 25.00",
+                image: "https://via.placeholder.com/300x300/dc2626/ffffff?text=Roman+Candle",
+                description: "Beautiful multi-shot roman candle with colorful effects",
+                hasVideo: true
+            },
+            {
+                id: 2,
+                name: "Sparkler Premium",
+                price: "RM 15.00",
+                image: "https://via.placeholder.com/300x300/ea580c/ffffff?text=Sparkler",
+                description: "Long-lasting sparklers perfect for celebrations",
+                hasVideo: false
+            },
+            {
+                id: 3,
+                name: "Fountain Spectacular",
+                price: "RM 45.00",
+                image: "https://via.placeholder.com/300x300/dc2626/ffffff?text=Fountain",
+                description: "Ground fountain with amazing color display",
+                hasVideo: true
+            },
+            {
+                id: 4,
+                name: "Rocket Blast",
+                price: "RM 35.00",
+                image: "https://via.placeholder.com/300x300/ea580c/ffffff?text=Rocket",
+                description: "High-flying rockets with spectacular bursts",
+                hasVideo: true
+            },
+            {
+                id: 5,
+                name: "Catherine Wheel",
+                price: "RM 20.00",
+                image: "https://via.placeholder.com/300x300/dc2626/ffffff?text=Catherine+Wheel",
+                description: "Spinning wheel firework with colorful sparks",
+                hasVideo: false
+            },
+            {
+                id: 6,
+                name: "Cake Firework",
+                price: "RM 65.00",
+                image: "https://via.placeholder.com/300x300/ea580c/ffffff?text=Cake+Firework",
+                description: "Multi-shot cake with various effects",
+                hasVideo: true
+            }
+        ];
+
+        // Language translations
+        const translations = {
+            en: {
+                heroTitle: "Premium Fireworks Collection",
+                heroSubtitle: "Light up your celebrations with our spectacular fireworks",
+                contactTitle: "Contact Us",
+                linksTitle: "Quick Links",
+                followTitle: "Follow Us",
+                addToCart: "Add to Cart",
+                watchVideo: "Watch Video",
+                videoModalTitle: "Product Video",
+                itemAdded: "Item added to cart!",
+                home: "Home",
+                products: "Products",
+                cart: "Cart"
+            },
+            ms: {
+                heroTitle: "Koleksi Bunga Api Premium",
+                heroSubtitle: "Terangkan sambutan anda dengan bunga api yang menakjubkan",
+                contactTitle: "Hubungi Kami",
+                linksTitle: "Pautan Pantas",
+                followTitle: "Ikuti Kami",
+                addToCart: "Tambah ke Troli",
+                watchVideo: "Tonton Video",
+                videoModalTitle: "Video Produk",
+                itemAdded: "Item ditambah ke troli!",
+                home: "Utama",
+                products: "Produk",
+                cart: "Troli"
+            }
+        };
+
+        let currentLanguage = 'en';
+        let cartCount = 0;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProducts();
+            setupEventListeners();
+        });
+
+        function loadProducts() {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            products.forEach(product => {
+                const productCard = createProductCard(product);
+                grid.appendChild(productCard);
+            });
+        }
+
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card bg-white/10 backdrop-blur rounded-lg overflow-hidden hover:bg-white/20 transition-all duration-300 group';
+            
+            card.innerHTML = `
+                <div class="aspect-square overflow-hidden">
+                    <img src="${product.image}" alt="${product.name}" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">${product.name}</h3>
+                    <div class="text-yellow-400 font-bold text-lg mb-3">${product.price}</div>
+                    <p class="text-red-100 text-sm mb-4">${product.description}</p>
+                    <div class="flex space-x-2">
+                        <button class="add-to-cart-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition-colors flex-1"
+                                data-product-id="${product.id}" data-product-name="${product.name}">
+                            ${translations[currentLanguage].addToCart}
+                        </button>
+                        ${product.hasVideo ? `
+                            <button class="video-trigger bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors"
+                                    data-video="sample-video-${product.id}">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function setupEventListeners() {
+            // Language switcher
+            document.getElementById('language-select').addEventListener('change', function(e) {
+                currentLanguage = e.target.value;
+                updateLanguage();
+                loadProducts(); // Reload products with new language
+            });
+
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Add to cart buttons (event delegation)
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart-btn')) {
+                    const productId = e.target.getAttribute('data-product-id');
+                    const productName = e.target.getAttribute('data-product-name');
+                    addToCart(productId, productName, e.target);
+                }
+            });
+
+            // Video triggers (event delegation)
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.video-trigger')) {
+                    const videoId = e.target.closest('.video-trigger').getAttribute('data-video');
+                    openVideoModal(videoId);
+                }
+            });
+
+            // Close video modal
+            document.getElementById('close-video').addEventListener('click', closeVideoModal);
+            document.getElementById('video-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeVideoModal();
+                }
+            });
+        }
+
+        function updateLanguage() {
+            const t = translations[currentLanguage];
+            
+            document.getElementById('hero-title').textContent = t.heroTitle;
+            document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
+            document.getElementById('contact-title').textContent = t.contactTitle;
+            document.getElementById('links-title').textContent = t.linksTitle;
+            document.getElementById('follow-title').textContent = t.followTitle;
+            document.getElementById('video-modal-title').textContent = t.videoModalTitle;
+        }
+
+        function addToCart(productId, productName, buttonElement) {
+            // Flying cart animation
+            createFlyingCart(buttonElement);
+            
+            // Update cart count
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+            
+            // Show toast notification
+            showToast(translations[currentLanguage].itemAdded);
+        }
+
+        function createFlyingCart(sourceElement) {
+            const rect = sourceElement.getBoundingClientRect();
+            const cartElement = document.querySelector('#cart-count').parentElement;
+            const cartRect = cartElement.getBoundingClientRect();
+            
+            const flyingCart = document.createElement('div');
+            flyingCart.className = 'flying-cart bg-red-600 text-white px-3 py-1 rounded text-sm';
+            flyingCart.textContent = '+1';
+            flyingCart.style.left = rect.left + 'px';
+            flyingCart.style.top = rect.top + 'px';
+            
+            document.body.appendChild(flyingCart);
+            
+            // Animate to cart
+            setTimeout(() => {
+                flyingCart.style.left = cartRect.left + 'px';
+                flyingCart.style.top = cartRect.top + 'px';
+                flyingCart.style.opacity = '0';
+                flyingCart.style.transform = 'scale(0.5)';
+            }, 100);
+            
+            // Remove element after animation
+            setTimeout(() => {
+                document.body.removeChild(flyingCart);
+            }, 900);
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast bg-green-600 text-white px-4 py-2 rounded shadow-lg';
+            toast.textContent = message;
+            
+            document.getElementById('toast-container').appendChild(toast);
+            
+            // Show toast
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            // Hide and remove toast
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (toast.parentElement) {
+                        toast.parentElement.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('video-modal');
+            const content = document.getElementById('video-content');
+            
+            content.innerHTML = `
+                <div class="aspect-video bg-gray-200 rounded flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">🎆</div>
+                        <p class="text-gray-600">Video: ${videoId}</p>
+                        <p class="text-sm text-gray-500 mt-2">In a real WordPress site, this would show the actual product video</p>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>

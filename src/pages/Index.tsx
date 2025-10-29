@@ -3,15 +3,39 @@ import Navbar from "@/components/Navbar";
 import FestivalCard from "@/components/FestivalCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
+import FestivalDebug from "@/components/FestivalDebug";
 import { fireworksData } from "@/data/fireworksData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { getSeasonalCopywriting, getCurrentFestival, debugCurrentFestival } from "@/utils/festivalSeason";
 
 const Index = () => {
   const { language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [seasonalCopy, setSeasonalCopy] = useState(getSeasonalCopywriting());
+  const [currentFestival, setCurrentFestival] = useState(getCurrentFestival());
+
+  // Update seasonal content on component mount and daily
+  useEffect(() => {
+    const updateSeasonalContent = () => {
+      setSeasonalCopy(getSeasonalCopywriting());
+      setCurrentFestival(getCurrentFestival());
+      
+      // Debug log for development
+      if (process.env.NODE_ENV === 'development') {
+        debugCurrentFestival();
+      }
+    };
+
+    updateSeasonalContent();
+    
+    // Update daily to catch festival changes (24 hours = 86400000ms)
+    const interval = setInterval(updateSeasonalContent, 24 * 60 * 60 * 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   // Select 6 Merdeka fireworks for carousel
   const merdekaFireworks = [
@@ -47,18 +71,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <FestivalDebug />
       <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/20 via-background to-secondary/20 py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
-            {language === 'en' ? 'MercunMurah' : 'MercunMurah'}
+            {seasonalCopy.mainHeading[language]}
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            {language === 'en' 
-              ? 'Your trusted source for premium fireworks and festive celebrations' 
-              : 'Sumber terpercaya anda untuk bunga api premium dan perayaan meriah'}
+            {seasonalCopy.description[language]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -80,6 +103,9 @@ const Index = () => {
       {/* Fireworks Carousel */}
       <section className="py-16">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            {seasonalCopy.subHeading[language]}
+          </h2>
           <div className="relative">
             {/* Left Arrow */}
             <button
@@ -171,7 +197,9 @@ const Index = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            {language === 'en' ? 'Perfect for Every Celebration' : 'Sesuai untuk Setiap Perayaan'}
+            {currentFestival 
+              ? `${language === 'en' ? currentFestival.name : currentFestival.nameMs} | Sparklers Wedding Malaysia`
+              : (language === 'en' ? 'Wedding & Festival Fireworks Malaysia' : 'Bunga Api Wedding & Festival Malaysia')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <FestivalCard

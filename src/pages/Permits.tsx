@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Shield, Download, Phone, CheckCircle, AlertTriangle, Heart, Eye, Ear } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -7,9 +7,19 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { CONTACT_INFO } from '@/config/constants';
+import { getSeasonalCopywriting, getCurrentFestival } from '@/utils/festivalSeason';
 
 const Permits: React.FC = () => {
   const { language } = useLanguage();
+  const [seasonalCopy, setSeasonalCopy] = useState(getSeasonalCopywriting());
+  const [currentFestival, setCurrentFestival] = useState(getCurrentFestival());
+
+  // Update seasonal content on component mount
+  useEffect(() => {
+    setSeasonalCopy(getSeasonalCopywriting());
+    setCurrentFestival(getCurrentFestival());
+  }, []);
 
   const permitSteps = [
     {
@@ -31,8 +41,8 @@ const Permits: React.FC = () => {
         ms: 'Kumpul Dokumen Diperlukan' 
       },
       description: { 
-        en: 'IC copy, passport photo, proof of address, and purpose letter.',
-        ms: 'Salinan IC, gambar pasport, bukti alamat, dan surat tujuan.'
+        en: 'IC copy, passport photo, agent letter, and PBT approval.',
+        ms: 'Salinan IC, gambar pasport, surat ejen, dan kelulusan PBT.'
       },
       icon: CheckCircle
     },
@@ -43,8 +53,8 @@ const Permits: React.FC = () => {
         ms: 'Hantar Permohonan' 
       },
       description: { 
-        en: 'Submit to nearest police station with RM50 processing fee.',
-        ms: 'Hantar ke balai polis terdekat dengan bayaran pemprosesan RM50.'
+        en: 'Submit application to nearest police station.',
+        ms: 'Hantar permohonan ke balai polis terdekat.'
       },
       icon: Download
     },
@@ -96,7 +106,7 @@ const Permits: React.FC = () => {
       'Valid reason for fireworks use',
       'Specific location and date of use',
       'Safety measures plan',
-      'Insurance coverage (for large events)'
+      'Safety plan documentation'
     ],
     ms: [
       'Warganegara Malaysia berumur 18 tahun ke atas',
@@ -104,7 +114,7 @@ const Permits: React.FC = () => {
       'Sebab yang sah untuk penggunaan bunga api',
       'Lokasi dan tarikh penggunaan yang khusus',
       'Pelan langkah keselamatan',
-      'Perlindungan insurans (untuk acara besar)'
+      'Dokumentasi pelan keselamatan'
     ]
   };
 
@@ -112,23 +122,19 @@ const Permits: React.FC = () => {
     en: [
       'Copy of Malaysian IC (front and back)',
       'Recent passport-sized photograph',
-      'Proof of address (utility bill)',
-      'Letter stating purpose of fireworks use',
-      'Event details and location map',
-      'Safety plan document'
+      'Authorized agent appointment letter from fireworks supplier',
+      'Approval letter from Local Council (PBT)'
     ],
     ms: [
       'Salinan IC Malaysia (depan dan belakang)',
       'Gambar berukuran pasport terkini',
-      'Bukti alamat (bil utiliti)',
-      'Surat menyatakan tujuan penggunaan bunga api',
-      'Butiran acara dan peta lokasi',
-      'Dokumen pelan keselamatan'
+      'Surat lantikan ejen sah dari pihak pembekal bunga api',
+      'Surat kelulusan dari Majlis Daerah (PBT)'
     ]
   };
 
   const handleWhatsAppAssistance = () => {
-    const phoneNumber = '+60137340415';
+    const phoneNumber = CONTACT_INFO.whatsappNumber;
     const message = encodeURIComponent(
       language === 'en' 
         ? 'Hi MercunMurah! I need assistance with fireworks permit application and safety guidance.'
@@ -145,12 +151,14 @@ const Permits: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold explosive-text mb-6">
-            {language === 'en' ? 'Fireworks Permit & Safety Guide' : 'Panduan Permit & Keselamatan Bunga Api'}
+            {currentFestival 
+              ? `Cara Mohon Permit Bunga Api ${currentFestival.name} PDRM 2024 | Lesen Mercun Malaysia`
+              : 'Cara Mohon Permit Bunga Api PDRM 2024 | Lesen Mercun Malaysia Guide'}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            {language === 'en'
-              ? 'Complete guide to obtaining legal fireworks permits and using fireworks safely in Malaysia'
-              : 'Panduan lengkap untuk mendapatkan permit bunga api yang sah dan menggunakan bunga api dengan selamat di Malaysia'
+            {currentFestival 
+              ? `Panduan lengkap mohon lesen bunga api Malaysia 2024. Permit PDRM untuk mercun ${currentFestival.name.toLowerCase()}, wedding. Dokumen diperlukan, syarat umur 18+. ${currentFestival.daysUntil > 0 ? `Mohon awal untuk ${currentFestival.name}!` : `Permit ${currentFestival.name} tersedia!`} Proses 7-14 hari.`
+              : 'Panduan lengkap mohon lesen bunga api Malaysia 2024. Permit PDRM untuk mercun wedding, festival. Dokumen diperlukan, syarat umur 18+. Proses 7-14 hari.'
             }
           </p>
         </div>
@@ -166,8 +174,8 @@ const Permits: React.FC = () => {
                 </h3>
                 <p className="text-gray-300">
                   {language === 'en'
-                    ? 'Using fireworks without proper permits is illegal in Malaysia and can result in fines up to RM10,000 or imprisonment. Always obtain proper permits and follow safety guidelines.'
-                    : 'Menggunakan bunga api tanpa permit yang betul adalah haram di Malaysia dan boleh mengakibatkan denda sehingga RM10,000 atau penjara. Sentiasa dapatkan permit yang betul dan ikuti garis panduan keselamatan.'
+                    ? 'Using fireworks without proper permits is illegal in Malaysia. Always obtain proper permits and follow safety guidelines for safe usage.'
+                    : 'Menggunakan bunga api tanpa permit yang betul adalah haram di Malaysia. Sentiasa dapatkan permit yang betul dan ikuti garis panduan keselamatan untuk penggunaan selamat.'
                   }
                 </p>
               </div>

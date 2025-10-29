@@ -109,7 +109,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onWatchVideo, onAddT
                 ? `Check out ${product.name.en} - RM${product.price}` 
                 : `Lihat ${product.name.ms} - RM${product.price}`
               }
-              url={`${window.location.origin}/fireworks?product=${product.id}`}
+              url={typeof window !== 'undefined' ? `${window.location.origin}/fireworks?product=${product.id}` : `/fireworks?product=${product.id}`}
               image={product.image}
               variant="outline"
               size="icon"

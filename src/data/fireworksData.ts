@@ -910,15 +910,6 @@ export const fireworksData: FireworkProduct[] = [
     section: 'MERDEKA FIREWORKS'
   },
   {
-    id: 996,
-    name: { en: '5414 Shoot Cake (ABC) (Straight V Shape) Bb51', ms: '5414 Shoot Cake (ABC) (Straight V Shape) Bb51' },
-    price: 450,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199083/fireworks_400x400/fireworks_400x400/resized_framed_12_Patten_160_Saat_Fountain.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ii399k00000clg655khz7o.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
     id: 997,
     name: { en: '5138 Shoot Cake (ABC) (V Shape) Bb5138 C', ms: '5138 Shoot Cake (ABC) (V Shape) Bb5138 C' },
     price: 450,
@@ -1104,15 +1095,6 @@ export const fireworksData: FireworkProduct[] = [
     price: 200,
     image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198954/fireworks_400x400/fireworks_400x400/resized_framed_product_116_949_Shoot_Cake.jpg',
     videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077856/HunterBoom/cm597rqi4000u03mqe0ml5xhk_qmk1ha.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1018,
-    name: { en: '9138 Shoot Cake', ms: '9138 Shoot Cake' },
-    price: 450,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199016/fireworks_400x400/fireworks_400x400/resized_framed_product_117_9138_Shoot_Cake.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077868/HunterBoom/cm598lsfi000003l55pwdcx4b_j0398m.mp4',
     category: 'traditional',
     section: 'MERDEKA FIREWORKS'
   },
