@@ -2,6 +2,10 @@ import React from 'react';
 import { getCurrentFestival, getSeasonalCopywriting, debugCurrentFestival } from '@/utils/festivalSeason';
 
 const FestivalDebug: React.FC = () => {
+  if (process.env.NODE_ENV !== 'development') {
+    return null;
+  }
+
   const currentFestival = getCurrentFestival();
   const seasonalCopy = getSeasonalCopywriting();
 
@@ -9,10 +13,6 @@ const FestivalDebug: React.FC = () => {
   React.useEffect(() => {
     debugCurrentFestival();
   }, []);
-
-  if (process.env.NODE_ENV !== 'development') {
-    return null; // Only show in development
-  }
 
   return (
     <div style={{

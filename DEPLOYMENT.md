@@ -1,100 +1,249 @@
-# Panduan Deployment ke VPS
+# 🚀 MercunMurah.com - Deployment Guide
 
-## Konfigurasi Awal
+Complete guide for deploying and managing mercunmurah.com
 
-1. Buat file `.env.local` di root project dengan isi berikut:
+---
 
+## 📋 Table of Contents
+
+1. [Server Information](#server-information)
+2. [Supabase Setup](#supabase-setup)
+3. [Building & Deploying](#building--deploying)
+4. [DNS & Cloudflare](#dns--cloudflare)
+5. [Troubleshooting](#troubleshooting)
+
+---
+
+## 🖥️ Server Information
+
+### VPS Details
+- **Provider:** VPS hosting
+- **IP Address:** `84.247.150.90`
+- **Web Server:** OpenLiteSpeed
+- **Document Root:** `/usr/local/lsws/mercunmurah.com/html/`
+
+### SSH Access
 ```bash
-# VPS Deployment Configuration
-VPS_HOST=84.247.150.90
-VPS_USER=root
-VPS_PASSWORD=t2P7mU89rv4
-VPS_DEPLOY_PATH=/var/www/html
+ssh root@84.247.150.90
 ```
 
-**Penting:** File `.env.local` sudah terdaftar di `.gitignore` dan tidak akan di-commit ke repository.
-
-## Setup VPS
-
-Pastikan VPS sudah dikonfigurasi dengan:
-- Web server (Nginx/Apache) yang mengarah ke `/var/www/html`
-- Port 80 dan 443 terbuka
-
-## Instalasi Dependencies untuk Deployment
-
-Script deployment memerlukan `sshpass` untuk password authentication. Install terlebih dahulu:
-
-### macOS
+### OpenLiteSpeed Commands
 ```bash
-brew install hudochenko/sshpass/sshpass
+# Restart server
+/usr/local/lsws/bin/lswsctrl restart
+
+# Stop server
+/usr/local/lsws/bin/lswsctrl stop
+
+# Start server
+/usr/local/lsws/bin/lswsctrl start
 ```
 
-### Linux
+---
+
+## 📦 Supabase Setup
+
+### Current Project
+- **Project ID:** `mplwseldejwxopoovhgz`
+- **Project URL:** `https://mplwseldejwxopoovhgz.supabase.co`
+- **API Key:** (stored in `src/integrations/supabase/client.ts`)
+
+### Database Tables
+- `customers` - Customer information
+- `orders` - Order records with auto-generated order numbers
+- `order_items` - Individual items in each order
+
+### Edge Functions Deployed
+1. **`process-order`** - Creates orders in database
+2. **`get-pricing-info`** - Calculates cart totals and delivery fees
+3. **`send-order-notification`** - Sends order notifications via webhook
+4. **`contact-form`** - Handles contact form submissions
+
+### Supabase Keep-Alive (Free Tier)
+A cron job runs daily at 10 AM to ping Supabase and prevent auto-pause:
+
+**Location:** `/root/supabase-keepalive.sh`
+**Cron:** `0 10 * * * /root/supabase-keepalive.sh`
+**Logs:** `/var/log/supabase-keepalive.log`
+
+To check logs:
 ```bash
-sudo apt-get update && sudo apt-get install -y sshpass
+ssh root@84.247.150.90
+tail -20 /var/log/supabase-keepalive.log
 ```
 
-## Deployment
+---
 
-### Cara 1: Menggunakan npm script
+## 🏗️ Building & Deploying
+
+### Local Build Process
+
+1. **Install dependencies:**
 ```bash
-npm run deploy
+npm install
 ```
 
-### Cara 2: Langsung menjalankan script
-```bash
-chmod +x deploy.sh
-./deploy.sh
-```
-
-## Cara Manual
-
-Jika script tidak berfungsi, Anda dapat melakukan deployment manual:
-
-1. **Build project:**
+2. **Build production:**
 ```bash
 npm run build
 ```
 
-2. **Upload ke VPS:**
+This creates optimized files in `dist/` directory.
+
+**Build includes:**
+- ✅ `.htaccess` for React Router (OpenLiteSpeed compatible)
+- ✅ Gzip compression configuration
+- ✅ Browser caching rules (images: 1 year, CSS/JS: 1 month)
+- ✅ Security headers (XSS protection, clickjacking prevention)
+- ✅ Pre-rendered HTML files for SEO
+
+### Deploy to VPS
+
+**Using rsync (recommended):**
 ```bash
-sshpass -p "t2P7mU89rv4" rsync -avz --delete \
-  -e "ssh -o StrictHostKeyChecking=no" \
-  dist/ \
-  root@84.247.150.90:/var/www/html/
+rsync -avz --delete --exclude="*.log" --exclude="node_modules" dist/ root@84.247.150.90:/usr/local/lsws/mercunmurah.com/html/
 ```
 
-Atau menggunakan scp:
+**Then restart server:**
 ```bash
-sshpass -p "t2P7mU89rv4" scp -r -o StrictHostKeyChecking=no \
-  dist/* \
-  root@84.247.150.90:/var/www/html/
+ssh root@84.247.150.90 "/usr/local/lsws/bin/lswsctrl restart"
 ```
 
-3. **Atau login manual dan upload:**
+### Complete Deployment Script
+
 ```bash
-ssh root@84.247.150.90
-# Password: t2P7mU89rv4
+# 1. Build
+npm run build
+
+# 2. Deploy
+rsync -avz --delete dist/ root@84.247.150.90:/usr/local/lsws/mercunmurah.com/html/
+
+# 3. Restart
+ssh root@84.247.150.90 "/usr/local/lsws/bin/lswsctrl restart"
 ```
 
-## Keamanan
+---
 
-Untuk keamanan yang lebih baik, disarankan untuk:
-1. Menggunakan SSH key authentication instead of password
-2. Menggunakan environment variables di VPS
-3. Tidak menyimpan password di file teks biasa
+## 🌐 DNS & Cloudflare
 
-## Troubleshooting
+### DNS Configuration
+- **Domain:** mercunmurah.com
+- **A Record:** `@` → `84.247.150.90`
+- **Cloudflare Proxy:** ✅ Enabled (Orange cloud)
 
-### Error: sshpass tidak ditemukan
-Install sshpass sesuai instruksi di atas.
+### SSL/HTTPS
+- **Mode:** Cloudflare Flexible SSL
+- **Certificate:** Auto-managed by Cloudflare
+- **Force HTTPS:** Enabled
 
-### Error: Permission denied
-Pastikan user memiliki akses ke folder deployment di VPS.
+### Cloudflare Cache Management
 
-### Error: Connection refused
-- Pastikan VPS sedang aktif
-- Cek firewall settings di VPS
-- Pastikan IP address benar
+**After deploying new code, ALWAYS purge Cloudflare cache:**
 
+1. Go to: https://dash.cloudflare.com
+2. Select `mercunmurah.com`
+3. **Caching** → **Configuration**
+4. Click **"Purge Everything"**
+5. Confirm purge
+6. Wait 30 seconds
 
+**Or use Development Mode (bypasses cache for 3 hours):**
+- Caching → Development Mode → Toggle ON
+
+---
+
+## 🛠️ Troubleshooting
+
+### Issue: Old Files Loading After Deployment
+
+**Cause:** Cloudflare cache not purged  
+**Solution:**
+1. Purge Cloudflare cache (see above)
+2. Hard refresh browser: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
+3. Or test in Incognito mode
+
+### Issue: Cart Checkout Fails
+
+**Check:**
+1. Browser console for errors (F12)
+2. Verify Supabase functions are deployed
+3. Check Supabase function logs: https://supabase.com/dashboard/project/mplwseldejwxopoovhgz/functions
+
+**Common causes:**
+- Old cached JavaScript files (purge Cloudflare)
+- Supabase function not deployed or has errors
+- Database connection issues
+
+### Issue: Images Not Loading
+
+**Check:**
+1. Cloudinary account is active: https://cloudinary.com
+2. Images are using correct Cloudinary URLs
+3. Check browser console for 401/403 errors
+
+**Cloudinary Account:**
+- Cloud name: `de8w3ykvy`
+- All product images hosted on Cloudinary
+
+### Issue: Supabase Paused (Free Tier)
+
+**Cause:** No activity for 7 days  
+**Solution:** Cron job already set up to ping daily
+
+**Manual wake up:**
+```bash
+curl https://mplwseldejwxopoovhgz.supabase.co/rest/v1/
+```
+
+---
+
+## 📝 Environment Variables
+
+No `.env` file needed. Supabase credentials are hardcoded in:
+- `src/integrations/supabase/client.ts`
+- `supabase/config.toml`
+
+---
+
+## 🔄 Future Migrations
+
+### To Update Supabase:
+1. Update credentials in `src/integrations/supabase/client.ts`
+2. Update project_id in `supabase/config.toml`
+3. Rebuild and deploy
+
+### To Change Hosting:
+1. Update VPS IP in DNS A record
+2. Deploy files to new server
+3. Configure web server (OpenLiteSpeed or Nginx)
+4. Update Cloudflare proxy if needed
+
+---
+
+## 📞 Support
+
+For deployment issues, check:
+- **Server Logs:** `/usr/local/lsws/logs/error.log`
+- **Supabase Logs:** Supabase Dashboard → Functions → Logs
+- **Browser Console:** F12 → Console tab
+
+---
+
+## ✅ Deployment Checklist
+
+Before going live:
+- [ ] Build completes without errors
+- [ ] All Supabase functions deployed
+- [ ] Database migrations applied
+- [ ] Files uploaded to VPS
+- [ ] Server restarted
+- [ ] Cloudflare cache purged
+- [ ] Test cart checkout
+- [ ] Test contact form
+- [ ] Verify images load
+- [ ] Check mobile responsiveness
+
+---
+
+**Last Updated:** October 29, 2024  
+**Current Version:** Production (Live on mercunmurah.com)

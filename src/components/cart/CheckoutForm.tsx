@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CreditCard, CalendarIcon } from 'lucide-react';
 import { format } from 'date-fns';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,7 +10,17 @@ import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
-import { supabase } from '@/integrations/supabase/client';
+import { CONTACT_INFO } from '@/config/constants';
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
+
+const WEBHOOK_URL = 'https://hook.integrator.boost.space/7fiu3esf47km3cubdjlhmdkx88vd92q2';
 
 const CheckoutForm: React.FC = () => {
   const { language } = useLanguage();
@@ -52,6 +62,10 @@ const CheckoutForm: React.FC = () => {
 
   const [deliveryDate, setDeliveryDate] = useState<Date>();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState<string | null>(null);
+  const [countdown, setCountdown] = useState<number>(4);
+  const countdownTimerRef = useRef<number | null>(null);
 
   // Pricing calculation now handled in backend for security
 
@@ -70,7 +84,6 @@ const CheckoutForm: React.FC = () => {
   const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    
     if (!deliveryDate) {
       toast({
         title: language === 'en' ? 'Date Required' : 'Tarikh Diperlukan',
@@ -85,59 +98,219 @@ const CheckoutForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      
-      // Call backend edge function for secure order processing
-      
-      const result = await supabase.functions.invoke('process-order', {
-        body: {
-          cartItems,
-          checkoutData,
-          deliveryDate: deliveryDate.toISOString()
-        }
+      // Calculate totals
+      const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const deliveryFee = subtotal >= 1000 ? 0 : 15;
+      const total = subtotal + deliveryFee;
+
+      const formattedDeliveryDate = format(deliveryDate, 'dd/MM/yyyy');
+      const now = new Date();
+
+      // Format order items
+      const itemsList = cartItems.map((item) => {
+        const productName = typeof item.name === 'string'
+          ? item.name
+          : (language === 'en' ? item.name?.en : item.name?.ms) || item.name?.en || 'Unknown Product';
+        return `${item.quantity}x ${productName} - RM${(item.price * item.quantity).toFixed(2)}`;
+      }).join('\n');
+
+      const orderPayload = {
+        timestamp: now.toISOString(),
+        customer: {
+          name: checkoutData.name,
+          phone: checkoutData.phone,
+          email: checkoutData.email,
+        },
+        shipping: {
+          address: checkoutData.address,
+          postcode: checkoutData.postcode,
+          city: checkoutData.city,
+          state: checkoutData.state,
+          deliveryDate: formattedDeliveryDate,
+        },
+        event: {
+          type: checkoutData.eventType,
+          specialInstructions: checkoutData.specialInstructions,
+        },
+        pricing: {
+          subtotal,
+          deliveryFee,
+          total,
+          currency: 'MYR',
+        },
+        items: cartItems.map((item) => ({
+          id: item.id,
+          name: typeof item.name === 'string' ? item.name : item.name.en,
+          quantity: item.quantity,
+          unitPrice: item.price,
+          totalPrice: item.price * item.quantity,
+          type: item.type,
+        })),
+        metadata: {
+          language,
+          generatedAt: now.toLocaleString('ms-MY'),
+        },
+      };
+
+      // Send order to webhook
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderPayload),
       });
 
-      const { data: orderResult, error: orderError } = result;
-
-      if (orderError) {
-        throw new Error(`Failed to process order: ${orderError.message}`);
+      if (!response.ok) {
+        throw new Error(`Webhook error: ${response.statusText}`);
       }
 
-      if (!orderResult?.success) {
-        throw new Error(orderResult?.error || 'Order processing failed - no success flag');
-      }
+      // Create WhatsApp message
+      const message = `🎆 *PESANAN BARU*
 
-      // Send notification via backend
-      const { error: notificationError } = await supabase.functions.invoke('send-order-notification', {
-        body: {
-          orderId: orderResult.orderId,
-          orderNumber: orderResult.orderNumber,
-          message: orderResult.message
-        }
-      });
+📦 *MAKLUMAT PELANGGAN*
+Nama: ${checkoutData.name}
+Telefon: ${checkoutData.phone}
+Email: ${checkoutData.email || 'Tiada'}
 
-      if (notificationError) {
-      }
+📍 *ALAMAT PENGHANTARAN*
+${checkoutData.address}
+${checkoutData.postcode} ${checkoutData.city}
+${checkoutData.state}
+
+🎯 *BUTIRAN ACARA*
+Jenis Acara: ${checkoutData.eventType || 'Tiada'}
+Tarikh Penghantaran: ${formattedDeliveryDate}
+
+🛒 *PESANAN*
+${itemsList}
+
+💰 *HARGA*
+Subtotal: RM${subtotal.toFixed(2)}
+Penghantaran: RM${deliveryFee.toFixed(2)}
+*JUMLAH: RM${total.toFixed(2)}*
+
+📝 *Arahan Khas:*
+${checkoutData.specialInstructions || 'Tiada'}
+
+──────────────────────
+Tarikh: ${now.toLocaleDateString('ms-MY')}
+Masa: ${now.toLocaleTimeString('ms-MY')}`;
+
+      // Open WhatsApp
+      const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsappNumber.replace(/\+/g, '')}?text=${encodeURIComponent(message)}`;
+      setWhatsappLink(whatsappUrl);
+      setShowThankYou(true);
 
       toast({
-        title: language === 'en' ? 'Order Placed!' : 'Pesanan Dibuat!',
+        title: language === 'en' ? 'Order Ready!' : 'Pesanan Sedia!',
         description: language === 'en' 
-          ? `Order ${orderResult.orderNumber} placed successfully! We will contact you to confirm delivery details.`
-          : `Pesanan ${orderResult.orderNumber} berjaya dibuat! Kami akan menghubungi anda untuk mengesahkan butiran penghantaran.`,
+          ? 'We will redirect you to WhatsApp shortly. Send the message to complete your order.'
+          : 'Kami akan bawa anda ke WhatsApp sebentar lagi. Hantar mesej untuk lengkapkan pesanan.',
       });
 
-      clearCart();
+      // Start countdown using setInterval
+      let count = 4;
+      setCountdown(count);
+      
+      countdownTimerRef.current = window.setInterval(() => {
+        count--;
+        console.log('Countdown:', count);
+        setCountdown(count);
+        
+        if (count <= 0) {
+          if (countdownTimerRef.current) {
+            clearInterval(countdownTimerRef.current);
+            countdownTimerRef.current = null;
+          }
+          
+          // Open WhatsApp
+          console.log('Opening WhatsApp:', whatsappUrl);
+          const whatsappWindow = window.open(whatsappUrl, '_blank');
+          
+          if (!whatsappWindow) {
+            toast({
+              title: language === 'en' ? 'Pop-up blocked' : 'Pop-up dihalang',
+              description: language === 'en'
+                ? 'Please tap the button below if WhatsApp did not open automatically.'
+                : 'Sila tekan butang di bawah jika WhatsApp tidak dibuka secara automatik.',
+            });
+          } else {
+            whatsappWindow.focus();
+            clearCart();
+            // Close modal after 1 second
+            setTimeout(() => {
+              setShowThankYou(false);
+            }, 1000);
+          }
+        }
+      }, 1000);
       
     } catch (error) {
+      console.error('Order error:', error);
+      
+      // Still try to send via direct WhatsApp link as fallback
+      const fallbackUrl = `https://wa.me/${CONTACT_INFO.whatsappNumber.replace(/\+/g, '')}`;
+      
       toast({
-        title: language === 'en' ? 'Order Failed' : 'Pesanan Gagal',
+        title: language === 'en' ? 'Opening WhatsApp...' : 'Membuka WhatsApp...',
         description: language === 'en' 
-          ? 'Failed to place order. Please try again or contact us directly.'
-          : 'Gagal membuat pesanan. Sila cuba lagi atau hubungi kami terus.',
-        variant: 'destructive',
+          ? `Please send your order manually. Contact: ${CONTACT_INFO.whatsappNumber}`
+          : `Sila hantar pesanan anda secara manual. Hubungi: ${CONTACT_INFO.whatsappNumber}`,
+        variant: 'default',
       });
+      
+      window.open(fallbackUrl, '_blank');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Cleanup interval on unmount or modal close
+  useEffect(() => {
+    return () => {
+      if (countdownTimerRef.current) {
+        clearInterval(countdownTimerRef.current);
+        countdownTimerRef.current = null;
+      }
+    };
+  }, []);
+
+  const handleCancelCountdown = () => {
+    if (countdownTimerRef.current) {
+      clearInterval(countdownTimerRef.current);
+      countdownTimerRef.current = null;
+    }
+    setShowThankYou(false);
+    setCountdown(4);
+  };
+
+  const handleOpenWhatsappNow = () => {
+    if (!whatsappLink) {
+      return;
     }
 
-    setIsSubmitting(false);
+    if (countdownTimerRef.current) {
+      clearInterval(countdownTimerRef.current);
+      countdownTimerRef.current = null;
+    }
+
+    const manualWindow = window.open(whatsappLink, '_blank');
+
+    if (!manualWindow) {
+      toast({
+        title: language === 'en' ? 'Pop-up blocked' : 'Pop-up dihalang',
+        description: language === 'en'
+          ? 'Please allow pop-ups or send the order manually.'
+          : 'Sila benarkan pop-up atau hantar pesanan secara manual.',
+      });
+      return;
+    }
+
+    manualWindow.focus();
+    clearCart();
+    setShowThankYou(false);
+    setCountdown(4);
   };
 
 
@@ -336,6 +509,42 @@ const CheckoutForm: React.FC = () => {
           </form>
         </CardContent>
       </Card>
+
+      <AlertDialog open={showThankYou} onOpenChange={setShowThankYou}>
+        <AlertDialogContent className="bg-gray-950 border border-red-900/40">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-white">
+              {language === 'en' ? 'Thank You!' : 'Terima Kasih!'}
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-gray-300">
+              {language === 'en'
+                ? countdown !== null && countdown > 0
+                  ? `Redirecting to WhatsApp in ${countdown} second${countdown === 1 ? '' : 's'}...`
+                  : 'Opening WhatsApp now. Please send the message to confirm your order.'
+                : countdown !== null && countdown > 0
+                  ? `Mengalihkan ke WhatsApp dalam ${countdown} saat...`
+                  : 'Sedang membuka WhatsApp sekarang. Sila hantar mesej untuk sahkan pesanan.'}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <div className="flex w-full flex-col gap-2 sm:flex-row sm:justify-end">
+              <Button
+                variant="outline"
+                onClick={handleCancelCountdown}
+                className="w-full sm:w-auto"
+              >
+                {language === 'en' ? 'Cancel' : 'Batal'}
+              </Button>
+              <Button
+                onClick={handleOpenWhatsappNow}
+                className="w-full sm:w-auto"
+              >
+                {language === 'en' ? 'Open WhatsApp Now' : 'Buka WhatsApp Sekarang'}
+              </Button>
+            </div>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };

@@ -1,73 +1,150 @@
-# Welcome to your Lovable project
+# 🎆 MercunMurah.com
 
-## Project info
+Premium fireworks e-commerce platform for Malaysia. Built with React, TypeScript, and Supabase.
 
-**URL**: https://lovable.dev/projects/b03ee16b-cf2d-4114-ae0d-febd247f0c61
+🌐 **Live Site:** [mercunmurah.com](https://mercunmurah.com)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+- **Frontend:** React 18 + TypeScript + Vite
+- **UI Library:** shadcn/ui + Tailwind CSS
+- **Backend:** Supabase (PostgreSQL + Edge Functions)
+- **Hosting:** VPS with OpenLiteSpeed
+- **CDN:** Cloudflare
+- **Images:** Cloudinary
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b03ee16b-cf2d-4114-ae0d-febd247f0c61) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+- 🛒 **Shopping Cart** - Full cart management with quantity controls
+- 💰 **Dynamic Pricing** - Server-side pricing calculation via Supabase Edge Functions
+- 📦 **Order Management** - Complete order processing with auto-generated order numbers
+- 🌐 **Bilingual** - English & Bahasa Malaysia support
+- 📱 **Responsive** - Mobile-first design
+- 🎨 **Modern UI** - Beautiful animations and festive themes
+- 🖼️ **Product Gallery** - High-quality firework product images
+- 📧 **Contact Form** - Integrated contact form with webhook notifications
+- 🚚 **Delivery Calculation** - Smart delivery fee based on cart total
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Project Structure
 
-Follow these steps:
+```
+mercunmurah-source-code/
+├── src/
+│   ├── components/     # React components
+│   ├── pages/          # Page components
+│   ├── contexts/       # React contexts (Cart, Language)
+│   ├── hooks/          # Custom hooks
+│   ├── integrations/   # Supabase integration
+│   └── data/           # Product data
+├── supabase/
+│   ├── functions/      # Edge Functions
+│   └── migrations/     # Database migrations
+├── public/             # Static assets
+└── dist/               # Production build
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🛠️ Development Setup
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Prerequisites
+- Node.js 18+ 
+- npm or bun
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/daushelmi123/mercunmurah.com.git
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Visit `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 📦 Supabase Setup
 
-This project is built with:
+### Database Tables
+- `customers` - Customer information
+- `orders` - Order records
+- `order_items` - Order line items
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Edge Functions
+1. `process-order` - Order creation
+2. `get-pricing-info` - Pricing calculation
+3. `send-order-notification` - Order notifications
+4. `contact-form` - Contact form handler
 
-## How can I deploy this project?
+See [DEPLOYMENT.md](DEPLOYMENT.md) for complete setup instructions.
 
-Simply open [Lovable](https://lovable.dev/projects/b03ee16b-cf2d-4114-ae0d-febd247f0c61) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 🚢 Deployment
 
-Yes, you can!
+Detailed deployment guide available in [DEPLOYMENT.md](DEPLOYMENT.md)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Quick Deploy:**
+```bash
+# Build
+npm run build
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Deploy to VPS
+rsync -avz dist/ root@84.247.150.90:/usr/local/lsws/mercunmurah.com/html/
+
+# Restart server
+ssh root@84.247.150.90 "/usr/local/lsws/bin/lswsctrl restart"
+
+# Purge Cloudflare cache
+# (via Cloudflare Dashboard)
+```
+
+---
+
+## 📚 Documentation
+
+- [DEPLOYMENT.md](DEPLOYMENT.md) - Complete deployment guide
+- [BACKEND_API_SPEC.md](BACKEND_API_SPEC.md) - API specifications
+- [CHANGELOG.md](CHANGELOG.md) - Version history
+
+---
+
+## 🤝 Contributing
+
+This is a private commercial project. For inquiries, contact the repository owner.
+
+---
+
+## 📝 License
+
+Proprietary - All rights reserved
+
+---
+
+## 📞 Support
+
+For technical issues or questions:
+- Check [DEPLOYMENT.md](DEPLOYMENT.md) troubleshooting section
+- Review Supabase function logs
+- Check browser console for client-side errors
+
+---
+
+**Built with ❤️ for the fireworks community in Malaysia** 🇲🇾

@@ -29,10 +29,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({
       url
     };
 
-    // Add image to share data if supported
-    if (image) {
-      shareData.url = `${url}#image=${encodeURIComponent(image)}`;
-    }
+    // Image parameter removed to keep URLs clean for sharing
 
     // Check if native sharing is available and supported
     if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {

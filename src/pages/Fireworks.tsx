@@ -79,6 +79,9 @@ const Fireworks: React.FC = () => {
 
   // Get cart position for animation end point
   const getCartPosition = () => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return { x: 0, y: 0 }; // SSR fallback
+    }
     const cartElement = document.querySelector('[data-cart-icon]');
     if (cartElement) {
       const rect = cartElement.getBoundingClientRect();
@@ -92,6 +95,9 @@ const Fireworks: React.FC = () => {
 
   // Handle click outside to close dropdown
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return; // Skip on SSR
+    }
     const handleClickOutside = (event: MouseEvent) => {
       const dropdown = document.getElementById('section-dropdown');
       if (dropdown && !dropdown.contains(event.target as Node)) {

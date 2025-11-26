@@ -1,0 +1,213 @@
+═══════════════════════════════════════════════════════════════════
+🎯 FULL CONTEXT - MercunMurah.com Cloudflare Cache Issue
+═══════════════════════════════════════════════════════════════════
+
+📍 LOCAL SOURCE CODE LOCATION
+──────────────────────────────────────────────────────────────────
+/Users/firdaus/Library/Mobile Documents/com~apple~CloudDocs/mercunmurah-source-code copy
+
+
+🖥️ VPS CONNECTION DETAILS
+──────────────────────────────────────────────────────────────────
+SSH Access:
+  ssh root@84.247.150.90
+  Password: t2P7mU89rv4
+
+Web Server: OpenLiteSpeed
+Document Root: /usr/local/lsws/mercunmurah.com/html/
+
+Server Commands:
+  # Restart server
+  /usr/local/lsws/bin/lswsctrl restart
+
+  # Check deployed files
+  ls -la /usr/local/lsws/mercunmurah.com/html/assets/
+
+  # View main HTML
+  cat /usr/local/lsws/mercunmurah.com/html/index.html | grep 'index-'
+
+
+🌐 DOMAIN & DNS
+──────────────────────────────────────────────────────────────────
+Domain: mercunmurah.com
+DNS Provider: Cloudflare
+Cloudflare Dashboard: https://dash.cloudflare.com
+
+DNS Configuration:
+  - A Record: @ → 84.247.150.90
+  - Proxy Status: ✅ Enabled (Orange cloud)
+  - SSL Mode: Flexible SSL
+
+
+📦 SUPABASE DETAILS
+──────────────────────────────────────────────────────────────────
+NEW Project (Current/Correct):
+  - Project ID: mplwseldejwxopoovhgz
+  - URL: https://mplwseldejwxopoovhgz.supabase.co
+  - Anon Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1wbHdzZWxkZWp3eG9wb292aGd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE3Mjk0NzQsImV4cCI6MjA3NzMwNTQ3NH0.hZ0kU-v9Qo0PH_JKWxYEKXRZ17bLVTS_RB3lJMZEf3Q
+
+OLD Project (Wrong/Deleted):
+  - Project ID: ydhvpmgldkajebfdahxh
+  - URL: https://ydhvpmgldkajebfdahxh.supabase.co ❌ (doesn't exist)
+
+Edge Functions Deployed on NEW Supabase:
+  1. process-order - Creates orders
+  2. get-pricing-info - Calculate pricing
+  3. send-order-notification - Send notifications
+  4. contact-form - Handle contact form
+
+
+⚠️ CURRENT PROBLEM
+──────────────────────────────────────────────────────────────────
+Issue: Cloudflare Cache Serving Old Files
+
+Symptoms:
+  - Browser console error: ERR_NAME_NOT_RESOLVED
+  - Trying to connect to: ydhvpmgldkajebfdahxh.supabase.co (OLD/wrong)
+  - Loading old JavaScript file: index-C7fe5YQL.js
+
+What's Actually on VPS:
+  VPS has CORRECT new file:
+  /usr/local/lsws/mercunmurah.com/html/assets/index-CD5-daiQ.js ✅
+
+What Cloudflare is Serving:
+  https://mercunmurah.com/assets/index-C7fe5YQL.js ❌ (OLD cached file)
+
+Root Cause:
+  Cloudflare CDN is caching old JavaScript file that has wrong Supabase URL.
+
+
+🔍 VERIFICATION COMMANDS
+──────────────────────────────────────────────────────────────────
+Check what VPS has:
+  ssh root@84.247.150.90
+  cat /usr/local/lsws/mercunmurah.com/html/index.html | grep 'index-'
+  # Should show: index-CD5-daiQ.js ✅
+
+Check what Cloudflare serves:
+  curl -s https://mercunmurah.com/index.html | grep 'index-'
+  # Currently shows: index-C7fe5YQL.js ❌
+
+Check Cloudflare cache status:
+  curl -I https://mercunmurah.com/index.html | grep -i "cf-cache"
+
+
+✅ SOLUTION NEEDED
+──────────────────────────────────────────────────────────────────
+Need to clear Cloudflare cache so it serves the NEW file from VPS.
+
+OPTION 1: Purge Cloudflare Cache
+  1. Go to: https://dash.cloudflare.com
+  2. Select: mercunmurah.com
+  3. Caching → Configuration
+  4. Click "Purge Everything"
+  5. Confirm purge
+  6. Wait 1-2 minutes
+
+OPTION 2: Enable Development Mode
+  1. Cloudflare Dashboard → Caching
+  2. Toggle "Development Mode" to ON
+  3. Bypasses cache for 3 hours
+
+OPTION 3: Disable Proxy Temporarily
+  1. Cloudflare Dashboard → DNS
+  2. Find A record for mercunmurah.com
+  3. Click orange cloud → turn GRAY (DNS only)
+  4. Wait 2-3 minutes
+  5. Test site
+  6. Turn back to ORANGE after working
+
+
+📁 KEY FILES IN SOURCE CODE
+──────────────────────────────────────────────────────────────────
+Supabase Client Configuration:
+  src/integrations/supabase/client.ts
+  Currently has NEW Supabase URL ✅
+
+Supabase Config:
+  supabase/config.toml
+  Project ID: mplwseldejwxopoovhgz ✅
+
+Edge Functions:
+  supabase/functions/process-order/index.ts
+  supabase/functions/get-pricing-info/index.ts
+  supabase/functions/send-order-notification/index.ts
+  supabase/functions/contact-form/index.ts
+
+
+🔄 DEPLOYMENT PROCESS
+──────────────────────────────────────────────────────────────────
+Local Build:
+  cd "/Users/firdaus/Library/Mobile Documents/com~apple~CloudDocs/mercunmurah-source-code copy"
+  npm run build
+
+Deploy to VPS:
+  rsync -avz --delete dist/ root@84.247.150.90:/usr/local/lsws/mercunmurah.com/html/
+
+Restart Server:
+  ssh root@84.247.150.90 "/usr/local/lsws/bin/lswsctrl restart"
+
+Current Status:
+  ✅ Local build completed successfully
+  ✅ Files deployed to VPS
+  ✅ VPS serving NEW files (index-CD5-daiQ.js)
+  ❌ Cloudflare still caching OLD files (index-C7fe5YQL.js)
+
+
+🎯 EXPECTED RESULT AFTER FIX
+──────────────────────────────────────────────────────────────────
+After clearing Cloudflare cache:
+
+Browser loads:
+  - index-CD5-daiQ.js (NEW file) ✅
+  - Connects to: mplwseldejwxopoovhgz.supabase.co ✅
+  - Cart checkout works ✅
+  - No ERR_NAME_NOT_RESOLVED errors ✅
+
+
+📝 ADDITIONAL CONTEXT
+──────────────────────────────────────────────────────────────────
+Tech Stack:
+  - Frontend: React + TypeScript + Vite
+  - Backend: Supabase (PostgreSQL + Edge Functions)
+  - Server: OpenLiteSpeed on VPS
+  - CDN: Cloudflare
+  - Domain: mercunmurah.com
+
+Recent Changes:
+  1. Migrated from OLD Supabase (ydhvpmgldkajebfdahxh) to NEW (mplwseldejwxopoovhgz)
+  2. Updated all source code with new credentials
+  3. Built and deployed to VPS successfully
+  4. VPS now has correct files
+  5. BUT Cloudflare still serving old cached files
+
+
+❓ QUESTION TO SOLVE
+──────────────────────────────────────────────────────────────────
+How do I force Cloudflare to serve the NEW files from VPS instead of the cached OLD files?
+
+The cache purge options in Cloudflare dashboard don't seem to be working, or cache is extremely sticky. 
+
+Need solution to either:
+  1. Successfully purge Cloudflare cache, OR
+  2. Bypass Cloudflare temporarily to verify VPS files work, OR
+  3. Add cache-busting headers at VPS level to prevent this issue
+
+
+🔧 WHAT I'VE TRIED
+──────────────────────────────────────────────────────────────────
+- Multiple browser hard refreshes (Ctrl+Shift+R)
+- Clearing browser cache
+- Testing in Incognito mode
+- Attempted Cloudflare "Purge Everything" (may not have worked correctly)
+- Multiple rebuilds and redeployments
+- Verified VPS has correct files multiple times
+
+The VPS definitely has the right files. The problem is 100% Cloudflare cache serving stale content.
+
+
+═══════════════════════════════════════════════════════════════════
+END OF CONTEXT
+═══════════════════════════════════════════════════════════════════
+
+

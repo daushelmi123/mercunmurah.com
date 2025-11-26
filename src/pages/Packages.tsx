@@ -39,78 +39,48 @@ const Packages: React.FC = () => {
     {
       id: 1,
       name: { en: 'Wedding Celebration Package', ms: 'Pakej Majlis Perkahwinan' },
-      description: { 
-        en: 'Perfect for your special wedding day with romantic fireworks',
-        ms: 'Sempurna untuk hari perkahwinan istimewa anda dengan bunga api romantik'
+      description: {
+        en: 'Package Hero Malaya',
+        ms: 'Pakej Hero Malaya'
       },
       items: {
-        en: ['10x Heart Shape Sparklers', '5x Golden Fountain', '3x Wedding Rockets', '2x Love Birds Display', '1x Grand Finale'],
-        ms: ['10x Pencahaya Bentuk Hati', '5x Air Pancut Emas', '3x Roket Perkahwinan', '2x Paparan Burung Cinta', '1x Kemuncak Besar']
+        en: ['3x 138 Shoot Thor V-Shape', '10x Besi 14"', '5x Fountain Smoke Colours', '2x Fountain Triangle'],
+        ms: ['3x 138 Shoot Thor V-Shape', '10x Besi 14"', '5x Fountain Smoke Colours', '2x Fountain Triangle']
       },
-      price: 299,
-      originalPrice: 450,
-      image: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=600&h=400&fit=crop',
+      price: 800,
+      originalPrice: 1000,
+      image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199101/fireworks_400x400/fireworks_400x400/resized_framed_5414_Shoot_Cake_Thor_V_Shape_5414.jpg',
       featured: true
     },
     {
       id: 2,
-      name: { en: 'Hari Raya Festive Package', ms: 'Pakej Perayaan Hari Raya' },
-      description: { 
-        en: 'Celebrate Hari Raya with joy and colorful fireworks',
-        ms: 'Rayakan Hari Raya dengan kegembiraan dan bunga api berwarna-warni'
+      name: { en: 'Wedding Celebration Package', ms: 'Pakej Majlis Perkahwinan' },
+      description: {
+        en: 'Package Heroin Malaya',
+        ms: 'Pakej Heroin Malaya'
       },
       items: {
-        en: ['15x Colorful Fountains', '8x Hari Raya Rockets', '5x Green & Gold Sparklers', '3x Crescent Moon Display', '2x Ketupat Shaped Fireworks'],
-        ms: ['15x Air Pancut Berwarna', '8x Roket Hari Raya', '5x Pencahaya Hijau & Emas', '3x Paparan Bulan Sabit', '2x Bunga Api Bentuk Ketupat']
+        en: ['1x 138 Shoot V-Shape', '10x Besi 14"', '5x Fountain Smoke Colours', '2x Fountain Triangle'],
+        ms: ['1x 138 Shoot V-Shape', '10x Besi 14"', '5x Fountain Smoke Colours', '2x Fountain Triangle']
       },
-      price: 199,
-      originalPrice: 280,
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&h=400&fit=crop'
+      price: 500,
+      originalPrice: 650,
+      image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199054/fireworks_400x400/fireworks_400x400/resized_framed_product_92_4138_Shoot_Cake.jpg'
     },
     {
       id: 3,
-      name: { en: 'Birthday Celebration Package', ms: 'Pakej Sambutan Hari Jadi' },
-      description: { 
-        en: 'Make birthdays extra special with exciting fireworks',
-        ms: 'Jadikan hari jadi lebih istimewa dengan bunga api yang menarik'
+      name: { en: 'Wedding Celebration Package', ms: 'Pakej Majlis Perkahwinan' },
+      description: {
+        en: 'Package Malam Nikah',
+        ms: 'Pakej Malam Nikah'
       },
       items: {
-        en: ['12x Birthday Candle Sparklers', '6x Number Fountains', '4x Happy Birthday Rockets', '3x Cake Shape Display', '2x Age Number Fireworks'],
-        ms: ['12x Pencahaya Lilin Hari Jadi', '6x Air Pancut Nombor', '4x Roket Selamat Hari Jadi', '3x Paparan Bentuk Kek', '2x Bunga Api Nombor Umur']
+        en: ['1x 138 Shoot', '5x Besi 14"', '5x Fountain Smoke Colours', '2x Fountain Triangle'],
+        ms: ['1x 138 Shoot', '5x Besi 14"', '5x Fountain Smoke Colours', '2x Fountain Triangle']
       },
-      price: 149,
-      originalPrice: 220,
-      image: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600&h=400&fit=crop'
-    },
-    {
-      id: 4,
-      name: { en: 'New Year Spectacular Package', ms: 'Pakej Spektakular Tahun Baru' },
-      description: { 
-        en: 'Welcome the new year with spectacular fireworks display',
-        ms: 'Sambut tahun baru dengan persembahan bunga api yang spektakular'
-      },
-      items: {
-        en: ['20x Countdown Fountains', '10x New Year Rockets', '5x Clock Display Fireworks', '3x Champagne Bottle Sparklers', '1x Midnight Finale'],
-        ms: ['20x Air Pancut Kiraan Detik', '10x Roket Tahun Baru', '5x Bunga Api Paparan Jam', '3x Pencahaya Botol Champagne', '1x Kemuncak Tengah Malam']
-      },
-      price: 399,
-      originalPrice: 550,
-      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop'
-    },
-    {
-      id: 5,
-      name: { en: 'Festival Mix Package', ms: 'Pakej Campuran Perayaan' },
-      description: { 
-        en: 'Versatile package perfect for any Malaysian festival',
-        ms: 'Pakej serba boleh yang sempurna untuk mana-mana perayaan Malaysia'
-      },
-      items: {
-        en: ['18x Mixed Color Fountains', '12x Festival Rockets', '8x Cultural Sparklers', '5x Traditional Display', '3x Unity Fireworks'],
-        ms: ['18x Air Pancut Warna Campuran', '12x Roket Perayaan', '8x Pencahaya Budaya', '5x Paparan Tradisional', '3x Bunga Api Perpaduan']
-      },
-      price: 249,
-      originalPrice: 350,
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop'
+      price: 300,
+      originalPrice: 400,
+      image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198993/fireworks_400x400/fireworks_400x400/resized_framed_product_24_14_Inch_Besi_14.jpg'
     }
   ];
 

@@ -9,7 +9,6 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { CONTACT_INFO } from '@/config/constants';
 import { getSeasonalCopywriting, getCurrentFestival } from '@/utils/festivalSeason';
-import { supabase } from '@/integrations/supabase/client';
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
@@ -40,35 +39,38 @@ const Contact: React.FC = () => {
     e.preventDefault();
     
     try {
-      // Send to Supabase Edge Function (secure like order system)
-      const { data, error } = await supabase.functions.invoke('contact-form', {
-        body: {
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          source: 'Contact Form',
-          timestamp: new Date().toISOString(),
-          userAgent: navigator.userAgent
-        }
-      });
+      // Create WhatsApp message
+      const whatsappMessage = `📧 *MESEJ DARI LAMAN WEB*
 
-      if (error) {
-        throw error;
-      }
+👤 *Nama:* ${formData.name}
+📞 *Telefon:* ${formData.phone}
+📧 *Email:* ${formData.email || 'Tiada'}
+
+📝 *Subjek:* ${formData.subject}
+
+💬 *Mesej:*
+${formData.message}
+
+──────────────────────
+Tarikh: ${new Date().toLocaleDateString('ms-MY')}
+Masa: ${new Date().toLocaleTimeString('ms-MY')}`;
+
+      // Open WhatsApp
+      const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsappNumber.replace(/\+/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, '_blank');
 
       alert(language === 'en' 
-        ? 'Thank you for your message! We will get back to you soon.'
-        : 'Terima kasih atas mesej anda! Kami akan menghubungi anda tidak lama lagi.'
+        ? 'WhatsApp opened with your message! Send it to complete your inquiry.'
+        : 'WhatsApp dibuka dengan mesej anda! Hantar untuk lengkapkan pertanyaan anda.'
       );
+      
       setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
       
     } catch (error) {
       console.error('Error sending form:', error);
       alert(language === 'en'
-        ? 'Sorry, there was an error sending your message. Please try again or contact us via WhatsApp.'
-        : 'Maaf, terdapat ralat menghantar mesej anda. Sila cuba lagi atau hubungi kami melalui WhatsApp.'
+        ? 'Sorry, there was an error. Please contact us directly via WhatsApp.'
+        : 'Maaf, terdapat ralat. Sila hubungi kami terus melalui WhatsApp.'
       );
     }
   };
