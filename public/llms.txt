@@ -1,0 +1,18 @@
+# MercunMurah
+
+> Affordable fireworks (bunga api) retailer in Malaysia, priced from RM2. Over 100 product options for Deepavali, Hari Raya, Chinese New Year, Thaipusam, Merdeka and other celebrations, serving KL, Shah Alam and Johor.
+
+## Key pages
+
+- [Fireworks](https://mercunmurah.com/fireworks): full product catalog
+- [Packages](https://mercunmurah.com/packages): bundled fireworks packages
+- [Permits](https://mercunmurah.com/permits): fireworks permit information
+- [Testimonials](https://mercunmurah.com/testimonials): customer reviews
+- [Contact](https://mercunmurah.com/contact): WhatsApp +60 13-734 0415
+
+## Facts
+
+- Contact: WhatsApp +60 13-734 0415
+- Price range: from RM2, over 100 product options
+- Coverage: Kuala Lumpur, Shah Alam, Johor
+- Occasions: Deepavali, Hari Raya, Chinese New Year, Thaipusam, Merdeka, weddings

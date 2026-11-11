@@ -18,6 +18,7 @@ const routesToPrerender = [
   '/testimonials',  // Testimonials component
   '/contact',       // Contact component
   '/cart',          // Cart component
+  '/404',           // NotFound component
   // Add new routes here when creating new pages:
   // '/blog',
   // '/blog/post-1',

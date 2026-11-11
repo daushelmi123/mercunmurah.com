@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -9,6 +9,10 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 
 const NotFound: React.FC = () => {
   const { language } = useLanguage();
+
+  useEffect(() => {
+    document.title = 'Page Not Found - MercunMurah';
+  }, []);
 
   return (
     <>

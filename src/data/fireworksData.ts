@@ -10,1083 +10,1264 @@ export interface FireworkProduct {
 
 export const fireworksData: FireworkProduct[] = [
   {
-    id: 30,
-    name: { en: 'Super Pop Pop', ms: 'Pop Pop Super' },
-    price: 45,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199087/fireworks_400x400/fireworks_400x400/resized_framed_product_38_Pop_Pop.jpg',
+    id: 1,
+    name: { en: '8 Feet (BOM)', ms: '8 Feet (BOM)' },
+    price: 10,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm53g77by000903mkdxuk798r.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkm09r000004ju1ou76a7s.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 2,
+    name: { en: '8 Feet 1.0 Super Red', ms: '8 Feet 1.0 Super Red' },
+    price: 20,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fcq5zd00000cmf89xf7i4q.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fcqwsm00080dkxfqkt9q7h.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 3,
+    name: { en: '8 Feet 1.0 Super Rose', ms: '8 Feet 1.0 Super Rose' },
+    price: 20,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fcso6900040dla4c8jcf9j.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkw2lw000004jsf4au22jh.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 4,
+    name: { en: '8 Feet 1.0 Super Gold', ms: '8 Feet 1.0 Super Gold' },
+    price: 24,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fcuu6t00020clgd4qh704n.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkudlx000704laefc119ju.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 5,
+    name: { en: '12 Feet 1.2 Super Gold', ms: '12 Feet 1.2 Super Gold' },
+    price: 42,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm46v1svo00020cl330bkdull.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkwyg5000004k0hx7b7tmz.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 6,
+    name: { en: '18 Feet 1.2 Super Red', ms: '18 Feet 1.2 Super Red' },
+    price: 52,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3feahc800050clk1a7a6v0r.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkya65000304l53iu3b254.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 7,
+    name: { en: '18 Feet 1.2 Super Rose', ms: '18 Feet 1.2 Super Rose' },
+    price: 52,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fe7wlm00000cl8bhzgb418.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkxz05000104l51wh10hsu.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 8,
+    name: { en: '18 Feet 1.2 Super Gold', ms: '18 Feet 1.2 Super Gold' },
+    price: 58,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fecsu500040cma6ipn8rnt.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkxkye000304l1gh7p21ih.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 9,
+    name: { en: '28 Feet Super Gold (Gift Box)', ms: '28 Feet Super Gold (Gift Box)' },
+    price: 138,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fchyct000j0ck18dknbjyo.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fcklnr00020cmk4ox5hesv.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 10,
+    name: { en: '38 Feet Super Red', ms: '38 Feet Super Red' },
+    price: 150,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3zhb94s00090cld448f7nu0.png',
     videoUrl: '',
-    category: 'pop_pop',
-    section: 'POP-POP'
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 11,
+    name: { en: '38 Feet Rose', ms: '38 Feet Rose' },
+    price: 150,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3zhcm1d00000cl28iirfmdy.png',
+    videoUrl: '',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 12,
+    name: { en: '38 Feet Gold', ms: '38 Feet Gold' },
+    price: 168,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3zhdsdn00000cl89nk66055.png',
+    videoUrl: '',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 13,
+    name: { en: '66 Feet Mix (Super Red + Rose)', ms: '66 Feet Mix (Super Red + Rose)' },
+    price: 188,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm57n90g0000j03jwbtvl1lqy.jpg',
+    videoUrl: '',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 14,
+    name: { en: '88 Feet Super Red', ms: '88 Feet Super Red' },
+    price: 208,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iid3x100000cl446f066p4.png',
+    videoUrl: '',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 15,
+    name: { en: '88 Feet Super Rose', ms: '88 Feet Super Rose' },
+    price: 208,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iieryf00010cl0g4p50wmj.png',
+    videoUrl: '',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 16,
+    name: { en: '88 Feet Super Gold', ms: '88 Feet Super Gold' },
+    price: 248,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fega7g000d0clkbjc7cjpw.png',
+    videoUrl: '',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 17,
+    name: { en: '108 Feet 8 Colour', ms: '108 Feet 8 Colour' },
+    price: 300,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdu20c000j04l2cbjh2oqy.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfdm5nat000004l1go688cqh.mp4',
+    category: 'firecracker',
+    section: 'RED DRAGON FIRECRACKERS'
+  },
+  {
+    id: 18,
+    name: { en: 'Sunset Kayu Tiga Warna', ms: 'Sunset Kayu Tiga Warna' },
+    price: 14,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3floap700030cl47ef2c9cq.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3flps0e000a0clb8e5pay1e.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 19,
+    name: { en: 'Sunset Besar', ms: 'Sunset Besar' },
+    price: 20,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3flqnpq00050cl24vy49i15.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3flt42v00020cjwe6jg8qf6.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 20,
+    name: { en: 'Asap Color', ms: 'Asap Color' },
+    price: 9,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fluf4k00000clidvo3a8tl.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3flwhbe000a0ckw4pm768ja.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 21,
+    name: { en: 'Asap', ms: 'Asap' },
+    price: 10,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fm39ct00090cjwcmsn5tv6.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fm4uk200070cl9aimr6np8.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 22,
+    name: { en: '7 Inch Besi', ms: '7 Inch Besi' },
+    price: 36,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdk8fk000504l84qyyegwr.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fmf22z000f0cle6no12tqy.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 23,
+    name: { en: '888 Shot Machine Gun', ms: '888 Shot Machine Gun' },
+    price: 78,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm56js0rp000e03jz72j23e9n.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhzmb57000e04l87rnjc25c.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 24,
+    name: { en: 'Sunset 4 Color', ms: 'Sunset 4 Color' },
+    price: 26,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fm680800010cmbedmg02is.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fm751x00030cjv1jticujs.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 25,
+    name: { en: '14 Inch Besi', ms: '14 Inch Besi' },
+    price: 50,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fmgc38000c0cl559owhyse.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fmggy000050cl2g5esh2a4.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 26,
+    name: { en: '18 Inch Besi', ms: '18 Inch Besi' },
+    price: 50,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fmik2e000a0cmhcjey4z9f.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fmin2800060cl27xtic2ae.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 27,
+    name: { en: 'Magic Stick (1 Minute)', ms: 'Magic Stick (1 Minute)' },
+    price: 68,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm56jrex5000b03kzbz4zh446.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fnyuab00000ckyfbrt8wvf.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 28,
+    name: { en: '15 Kali Magic', ms: '15 Kali Magic' },
+    price: 12,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fo7vlk00030cl35mocdnzo.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fo80ko00000cjhdgg929tm.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 29,
+    name: { en: '20 Kali Magic', ms: '20 Kali Magic' },
+    price: 15,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3foagwu00010ckx3vaedgc7.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3foao1000010cl2dwks4ja7.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 30,
+    name: { en: '30 Kali Magic', ms: '30 Kali Magic' },
+    price: 18,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fobmw200000ckx3ara3wje.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fobsv5000d0cmd1g4p6uer.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
   },
   {
     id: 31,
-    name: { en: 'Pop Pop Party Pack', ms: 'Pek Parti Pop Pop' },
+    name: { en: '10 Kali Pili Rain', ms: '10 Kali Pili Rain' },
+    price: 18,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3foii7j00060cl7155g9h4j.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3foin1h000j0cmddfdtaa4z.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 32,
+    name: { en: '388 Shot Machine Gun', ms: '388 Shot Machine Gun' },
+    price: 50,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm56jq7ph000103mn0lup23p1.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhzlv67000g04l8e2gm171p.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 33,
+    name: { en: 'Blue Ocean Machine Gun', ms: 'Blue Ocean Machine Gun' },
+    price: 88,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3zmay4n00050cmbg60hgfq3.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4nyh3v8000c0cjj37ic01jv.mp4',
+    category: 'handheld',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 34,
+    name: { en: 'Water Fall Sunset', ms: 'Water Fall Sunset' },
+    price: 15,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3jlv12w000l0cjjflmqdl48.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4jgwftl00020ckwe3z558ku.mp4',
+    category: 'cold',
+    section: 'KIDS" FIRECRACKERS'
+  },
+  {
+    id: 35,
+    name: { en: 'Dragon Wand', ms: 'Dragon Wand' },
     price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198878/fireworks_400x400/fireworks_400x400/resized_framed_product_39_Pop_Pop_Besar.jpg',
-    videoUrl: '',
-    category: 'pop_pop',
-    section: 'POP-POP'
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iisztm00030cjq38ujgm2p.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4jgxxi000090ckxc1j497wx.mp4',
+    category: 'cold',
+    section: 'KIDS" FIRECRACKERS'
+  },
+  {
+    id: 36,
+    name: { en: 'Kipas Fountain', ms: 'Kipas Fountain' },
+    price: 80,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ppv34700000cl00qs89z8v.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4jfx1d600000cl7487jh9o3.mp4',
+    category: 'cold',
+    section: 'KIDS" FIRECRACKERS'
+  },
+  {
+    id: 37,
+    name: { en: 'Magic Fountain', ms: 'Magic Fountain' },
+    price: 58,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iixrxk00030cl1ctak09lq.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4jgx1ub00020cmkeq874t8v.mp4',
+    category: 'cold',
+    section: 'KIDS" FIRECRACKERS'
+  },
+  {
+    id: 38,
+    name: { en: 'Smoke 5 Color', ms: 'Smoke 5 Color' },
+    price: 20,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fou30n00020cl92luiavbs.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fou62o00030cl1fjz21a29.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 39,
+    name: { en: 'Pokok Raya (Fa Cai Shu)', ms: 'Pokok Raya (Fa Cai Shu)' },
+    price: 14,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fpqj99000e0cl29v804kvv.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fpqma9000f0cl22cvnguto.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 40,
+    name: { en: 'Pokok Raya Besar (Big Fa Cai Shu 2.0)', ms: 'Pokok Raya Besar (Big Fa Cai Shu 2.0)' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fpwwqd000d0dl6b53ogfyz.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5cjtbon000403k12i40hb2m.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 41,
+    name: { en: 'Mini Ice Cream', ms: 'Mini Ice Cream' },
+    price: 14,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fq0o9j00030cjz7x753mnl.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fq24zv00060cig5djn3muq.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 42,
+    name: { en: '7" Ice Cream', ms: '7" Ice Cream' },
+    price: 45,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdktnu000404ky21dggmf5.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgl8w9a000804l579m58w7c.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 43,
+    name: { en: '15" Ice Cream', ms: '15" Ice Cream' },
+    price: 128,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fq8bbm000e0cl4e71gbyle.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fqtqw800010cl16gec78r2.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 44,
+    name: { en: 'Tiga Segi Fountain', ms: 'Tiga Segi Fountain' },
+    price: 20,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fsamsi00000cmk7lz78oki.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fsdlf900000cjt8l45gux4.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 45,
+    name: { en: 'Peacock (Lima)', ms: 'Peacock (Lima)' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fr2a5t00020clb83shft1h.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fr2ch100000cl7bcm5d512.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 46,
+    name: { en: 'Peacock (Tiga)', ms: 'Peacock (Tiga)' },
+    price: 23,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fqveof00000cl9950uhq6c.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fqzobs00000cmh9wgh0cmd.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 47,
+    name: { en: '12 Pattern 160 Second Fountain', ms: '12 Pattern 160 Second Fountain' },
+    price: 45,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm57o49vp000003l39mcwfdwl.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3fsxxwv00030clc0z503ddc.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 48,
+    name: { en: 'Tiga Segi Fountain Besar', ms: 'Tiga Segi Fountain Besar' },
+    price: 78,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fskvcm00020cl6cfbwh4tr.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4jiqbre00020cmaculigfcc.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 49,
+    name: { en: 'Colorful Fountain Box (210 Sec)', ms: 'Colorful Fountain Box (210 Sec)' },
+    price: 45,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ftegg700010clbd1zxfltu.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3mn2l4b00050cled2iye3sr.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 50,
+    name: { en: 'Surprise Fountain', ms: 'Surprise Fountain' },
+    price: 188,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ftzqrd00000cl75f3i71hs.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3m79p9j000r0cmh5jfe2vzm.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 51,
+    name: { en: 'Happy Go Lucky', ms: 'Happy Go Lucky' },
+    price: 299,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fu1bfy00000cjpftsccch8.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4jiap5w00020cl79c888fe1.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 52,
+    name: { en: 'Golden Harmony', ms: 'Golden Harmony' },
+    price: 168,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fu7e0d00010cl2aiy59kov.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5ci9aze000103jtdwub6akf.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 53,
+    name: { en: 'Taycan Sparkle', ms: 'Taycan Sparkle' },
+    price: 68,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fubfxa00020cl235geg9yc.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3r0q9o500010cm7f1pu2au0.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 54,
+    name: { en: 'Hexa Blaza Fountain', ms: 'Hexa Blaza Fountain' },
+    price: 88,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fueopb00020cl8gq018bzn.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ktxx7h00010clfgqnbf6b5.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 55,
+    name: { en: 'Golden Flame Fountain', ms: 'Golden Flame Fountain' },
+    price: 32,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm56jv6nc000f03kzh2e6bukh.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhzs4a2000004kz4ezxd9u2.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 56,
+    name: { en: 'Big Golden Flame Fountain', ms: 'Big Golden Flame Fountain' },
+    price: 88,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm56jvswb000g03jz9zxubylp.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhzr0ed000904jy0y41669g.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 57,
+    name: { en: 'King of Golden Mountain', ms: 'King of Golden Mountain' },
+    price: 48,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3fusxjz00000ckw25fugvoc.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3m7bvge000i0cl5baoi2bz2.mp4',
+    category: 'fountain',
+    section: 'FOUNTAIN BLAST'
+  },
+  {
+    id: 58,
+    name: { en: 'Thunder Clap', ms: 'Thunder Clap' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h75ro500000cjpdfi25yty.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkka6n000004l66gx0ec26.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 59,
+    name: { en: 'Thunder Clap Besar', ms: 'Thunder Clap Besar' },
+    price: 38,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h79mq900030cjrb8lzarvu.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h7a2v200010cl4bh3jbbyu.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 60,
+    name: { en: 'Rocket (1.0" + 1.2")', ms: 'Rocket (1.0" + 1.2")' },
+    price: 35,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h7k4rf00060cjtaky87kzw.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h7l9ao00050cl991x22ue6.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 61,
+    name: { en: 'Moon Travel', ms: 'Moon Travel' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h839vk00050cl6g3zn5za2.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h84sp300070cl9h4oie88d.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 62,
+    name: { en: 'Big Butterfly', ms: 'Big Butterfly' },
+    price: 17,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h9houa00030ckz7aiualjp.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h8b4p200060cl6ccz27jkc.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 63,
+    name: { en: '50 Shot Tikus', ms: '50 Shot Tikus' },
+    price: 18,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h8cpg600020ckv7isd5vin.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h8dbwc00050cl4ez6v0k0n.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 64,
+    name: { en: '100 Shot Tikus', ms: '100 Shot Tikus' },
+    price: 18,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h8e1mm00060cl4b6r31554.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h8efm200070cjrbdj7aygl.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 65,
+    name: { en: '100 Shoot Flying Dragon', ms: '100 Shoot Flying Dragon' },
+    price: 25,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h8n95400010ckzedjv18up.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h8pi2e000a0cl95egh7b6x.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 66,
+    name: { en: 'Jelly Fish (Link)', ms: 'Jelly Fish (Link)' },
+    price: 45,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h9jmp400010cl48xlq846l.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h9lci500050cl00a4f0lo5.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 67,
+    name: { en: 'Jelly Fish (Single)', ms: 'Jelly Fish (Single)' },
+    price: 25,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h9g2zn00000cjz1alu4e2i.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h9h3d100000cl86cku7v81.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 68,
+    name: { en: 'Romantic Fountain', ms: 'Romantic Fountain' },
+    price: 48,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ij67w400040cjsa6i625sk.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3r0ujr500030cmjew7xet44.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 69,
+    name: { en: 'Volcano Fireworks', ms: 'Volcano Fireworks' },
+    price: 188,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ije9i5000u0cl7bjlj3zv3.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3r1vdh100080cl82g9w37lb.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 70,
+    name: { en: 'Super Flash Rocket', ms: 'Super Flash Rocket' },
+    price: 99,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm56kl6zb000b03l20k9wcoz1.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5c2q9uj000803l7h1nt59uk.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 71,
+    name: { en: 'Explosive Gold Rocket', ms: 'Explosive Gold Rocket' },
+    price: 48,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm56knz3k000003l7b4gjgof4.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5xf09kq000f03l8g60yfqdf.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 72,
+    name: { en: 'Bee', ms: 'Bee' },
+    price: 8,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdnvau000604l292h3fd02.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhz5iv8000504jyc3hdgmfp.mp4',
+    category: 'flying',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 73,
+    name: { en: '4" 25 Shoot Cake', ms: '4" 25 Shoot Cake' },
+    price: 26,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3i5ki3h00050cle52cmdf4l.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4shf52l000703mteyab9izo.mp4',
+    category: 'barrel',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 74,
+    name: { en: '4" 36 Shoot Cake', ms: '4" 36 Shoot Cake' },
+    price: 38,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3i5jm6500040cl66z778i9g.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4shhj0r000003mdfbe23njd.mp4',
+    category: 'barrel',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 75,
+    name: { en: '4" 49 Shoot Cake', ms: '4" 49 Shoot Cake' },
+    price: 50,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3i5o94n00030cjuboo58byp.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4shhzku000903mt4o59h96b.mp4',
+    category: 'barrel',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 76,
+    name: { en: '4" 138 Shoot Cake (Machine-made)', ms: '4" 138 Shoot Cake (Machine-made)' },
+    price: 128,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3i5yg1n00020cl4e52oh0wu.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4shk2s0000g03ju9jme3n1g.mp4',
+    category: 'barrel',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 77,
+    name: { en: '4" 138 Shoot Cake (Full Gold)', ms: '4" 138 Shoot Cake (Full Gold)' },
+    price: 150,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdollp000504leelakbhhi.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfdmfasl000904ky3ewudzu1.mp4',
+    category: 'barrel',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 78,
+    name: { en: 'Match Crackers', ms: 'Match Crackers' },
+    price: 15,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h1c0pk00020cmg5gdi8a5f.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h1c4ni00020cjq1xzo6888.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 79,
+    name: { en: 'Spinning Beads', ms: 'Spinning Beads' },
+    price: 11,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm5atdbws000603mkfoabfr7t.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h504ye00000cky15mu1caf.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 80,
+    name: { en: 'Lotus Flower', ms: 'Lotus Flower' },
+    price: 20,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h51ukv00000cjvdn1v2zgp.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h53ace00020cmi1mn98djd.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 81,
+    name: { en: 'Colored Sand Poppers', ms: 'Colored Sand Poppers' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h5c3wg00010cl509b55tu3.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgl1ttx000604l5f05e9aes.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 82,
+    name: { en: 'Large Sand Poppers', ms: 'Large Sand Poppers' },
+    price: 48,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h5cybs00040cme0g6obm8o.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgl229w000304jw4r9u3z40.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 83,
+    name: { en: 'Red Good Fortune', ms: 'Red Good Fortune' },
+    price: 10,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h5fxbn000h0cl68ao032sr.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h5i48h00020cl21q1c1hj3.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 84,
+    name: { en: 'Dragon Egg', ms: 'Dragon Egg' },
+    price: 15,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h5ksk200010ci873go8q4f.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h5l1ha00040cid2pkh5fg2.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 85,
+    name: { en: 'Large Dragon Egg', ms: 'Large Dragon Egg' },
+    price: 22,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h5mcow00000cl5b15e2fll.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h5mitf00030ci89ilr128t.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 86,
+    name: { en: 'Dragon 3 Minute', ms: 'Dragon 3 Minute' },
+    price: 15,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h61zv900010cm9fg86ci2x.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h61r5g00000cl5glngbzr5.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 87,
+    name: { en: 'Large Dragon 3 Minute', ms: 'Large Dragon 3 Minute' },
+    price: 23,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h6390o00020cm92zydgujg.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h6944d00010cl9amkl4vj5.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 88,
+    name: { en: 'Thunder Crackers', ms: 'Thunder Crackers' },
+    price: 48,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h5dkls00010cju9lr1gj9a.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4jh480a00090cl86kxk4e08.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 89,
+    name: { en: 'Blue Smoke Crackers', ms: 'Blue Smoke Crackers' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdufnz000s04l22nad1p8g.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfdmcopr001204jr7yua2s3b.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 90,
+    name: { en: 'Camellia Flower Spinner', ms: 'Camellia Flower Spinner' },
+    price: 16,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdl74k000204le34l9awyu.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhygsq2000004kza9atej2p.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 91,
+    name: { en: 'Bottled Sand Poppers', ms: 'Bottled Sand Poppers' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdlpnd000404l2d37e7pam.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgl1hk3000204lg2vv181x1.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 92,
+    name: { en: '3 Meter Magic Whip', ms: '3 Meter Magic Whip' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdtkek000c04l894ske3gg.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhylt44000204kzf0ktgsdg.mp4',
+    category: 'ground',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
+  },
+  {
+    id: 93,
+    name: { en: 'Thunder King', ms: 'Thunder King' },
+    price: 15,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3h9m3i700000claal8i0di3.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h9pkw600010claepry79lh.mp4',
+    category: 'single',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 94,
+    name: { en: 'Banana Kecil (0.8)', ms: 'Banana Kecil (0.8)' },
+    price: 15,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3hcc4c500000cl5f7oafppm.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgkr2n7000004jrezuug4ec.mp4',
+    category: 'single',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 95,
+    name: { en: 'Banana Besar (1.2)', ms: 'Banana Besar (1.2)' },
+    price: 32,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3hcls2f00030cjva6e35j6n.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3hcly4100000clee9ix79ap.mp4',
+    category: 'single',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 96,
+    name: { en: 'Double Shoot Banana Besar (1.75)', ms: 'Double Shoot Banana Besar (1.75)' },
+    price: 55,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3hcpm0300020ckxeg5w38dm.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3hcptvc00030cjwacdy2wid.mp4',
+    category: 'single',
+    section: 'ONE SHOT, BIG BLAST!'
   },
   {
     id: 97,
-    name: { en: '4 138 Shot Merdeka', ms: '4 138 Shot Merdeka' },
-    price: 130,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199058/fireworks_400x400/fireworks_400x400/resized_framed_product_91_4_138_Shoot_Cake_4_138.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077619/HunterBoom/cm4shk2s0000g03ju9jme3n1g_wrp2hg.mp4',
-    category: 'merdeka',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 901,
-    name: { en: '5138 Shoot Cake ABC', ms: '5138 Shoot Cake (ABC)' },
-    price: 250,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198938/fireworks_400x400/fireworks_400x400/resized_framed_product_0_5138_Shoot_Cake_28ABC29.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076871/HunterBoom/cm4l31g5200010cmq8qeahfje_gjzsmh.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 902,
-    name: { en: '8 Feet (BOM)', ms: '8 Feet (Bom)' },
-    price: 7,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198958/fireworks_400x400/fireworks_400x400/resized_framed_8_Feet_BOM.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 903,
-    name: { en: '8 Feet 1.0 Super Red 1.0', ms: '8 Feet 1.0 Super Red' },
-    price: 20,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199029/fireworks_400x400/fireworks_400x400/resized_framed_product_2_8_Feet_1.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076882/HunterBoom/cm3fcqwsm00080dkxfqkt9q7h_jhwrtd.mp4',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 904,
-    name: { en: '8 Feet 1.0 Super Rose 1.0', ms: '8 Feet 1.0 Super Rose' },
-    price: 20,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199085/fireworks_400x400/fireworks_400x400/resized_framed_product_3_8_Feet_1.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 905,
-    name: { en: '8 Feet 1.0 Super Gold 1.0', ms: '8 Feet 1.0 Super Gold' },
-    price: 20,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199075/fireworks_400x400/fireworks_400x400/resized_framed_product_4_8_Feet_1.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 906,
-    name: { en: '12 Feet 1.2 Super Gold (1.2)', ms: '12 Feet 1.2 Super Gold' },
-    price: 45,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199003/fireworks_400x400/fireworks_400x400/resized_framed_product_5_12_Feet_1.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 907,
-    name: { en: '18 Feet 1.2 Super Red 18 (1.2)', ms: '18 Feet 1.2 Super Red' },
-    price: 65,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199060/fireworks_400x400/fireworks_400x400/resized_framed_product_6_18_Feet_1.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 908,
-    name: { en: '18 Feet 1.2 Super Rose 18 (1.2)', ms: '18 Feet 1.2 Super Rose' },
-    price: 65,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198978/fireworks_400x400/fireworks_400x400/resized_framed_product_7_18_Feet_1.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 909,
-    name: { en: '18 Feet 1.2 Super Gold 18 (1.2)', ms: '18 Feet 1.2 Super Gold' },
-    price: 65,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199089/fireworks_400x400/fireworks_400x400/resized_framed_product_8_18_Feet_1.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 910,
-    name: { en: '28 Feet Super Gold Gift Box 28', ms: '28 Feet Super Gold (Gift Box)' },
-    price: 85,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198919/fireworks_400x400/fireworks_400x400/resized_framed_product_9_28_Feet_Super_Gold_Gift_Box_28.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076893/HunterBoom/cm3fcklnr00020cmk4ox5hesv_c4wd5e.mp4',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 911,
-    name: { en: '38 Feet Red', ms: '38 Feet Super Red' },
-    price: 105,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198946/fireworks_400x400/fireworks_400x400/resized_framed_product_10_B_006_R_38_Feet_Super_Red_38.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 912,
-    name: { en: '38 Feet Rose', ms: '38 Feet Rose' },
-    price: 105,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199118/fireworks_400x400/fireworks_400x400/resized_framed_product_11_B_006_P_38_Feet_Rose_38.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 913,
-    name: { en: '38 Feet Gold', ms: '38 Feet Gold' },
-    price: 105,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198924/fireworks_400x400/fireworks_400x400/resized_framed_product_12_B_006_G_38_Feet_Gold_38.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 914,
-    name: { en: '66 Feet Mix Super Red Rose', ms: '66 Feet Mix (Super Red Rose)' },
-    price: 220,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199045/fireworks_400x400/fireworks_400x400/resized_framed_product_17_88_Feet_Mix_Super_Red_Rose_88.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 915,
-    name: { en: '88 Feet Red', ms: '88 Feet Super Red' },
-    price: 300,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199024/fireworks_400x400/fireworks_400x400/resized_framed_product_14_88_Feet_Super_Red_88.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 916,
-    name: { en: '88 Feet Rose', ms: '88 Feet Super Rose' },
-    price: 300,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198880/fireworks_400x400/fireworks_400x400/resized_framed_product_15_88_Feet_Super_Rose_88.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 917,
-    name: { en: '88 Feet Gold', ms: '88 Feet Super Gold' },
-    price: 300,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199077/fireworks_400x400/fireworks_400x400/resized_framed_product_16_88_Feet_Super_Gold_88.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 918,
-    name: { en: '88 Feet Mix Super Red Rose', ms: '88 Feet Mix (Super Red Rose)' },
-    price: 300,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199045/fireworks_400x400/fireworks_400x400/resized_framed_product_17_88_Feet_Mix_Super_Red_Rose_88.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076903/HunterBoom/cm3fek40900040dmk0yynbalc_ynqvah.mp4',
-    category: 'traditional',
-    section: 'RED DRAGON FIRECRACKERS'
-  },
-  {
-    id: 919,
-    name: { en: 'Sunset Kayu Tiga Warna', ms: 'Sunset Kayu Tiga Warna' },
-    price: 15,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199081/fireworks_400x400/fireworks_400x400/resized_framed_product_18_Sunset_Kayu_Tiga_Warna.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076913/HunterBoom/cm3flps0e000a0clb8e5pay1e_rzzlcl.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 920,
-    name: { en: 'Sunset Besar', ms: 'Sunset Besar' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199091/fireworks_400x400/fireworks_400x400/resized_framed_product_19_Sunset_Besar.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076923/HunterBoom/cm3flt42v00020cjwe6jg8qf6_jccz6a.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 921,
-    name: { en: 'Asap Color', ms: 'Asap Color' },
-    price: 8,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198962/fireworks_400x400/fireworks_400x400/resized_framed_product_20_Asap_Color.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076934/HunterBoom/cm3flwhbe000a0ckw4pm768ja_rewkth.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 922,
-    name: { en: 'Asap', ms: 'Asap' },
-    price: 8,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198948/fireworks_400x400/fireworks_400x400/resized_framed_product_21_Asap.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076946/HunterBoom/cm3fm4uk200070cl9aimr6np8_pu9rlo.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 923,
-    name: { en: 'Sunset 4 Color', ms: 'Sunset 4 Color' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198930/fireworks_400x400/fireworks_400x400/resized_framed_product_22_Sunset_4_Color.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076956/HunterBoom/cm3fm751x00030cjv1jticujs_hcsqvb.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 924,
-    name: { en: 'C018 7 Inch Besi 7', ms: 'C018 7 Inch Besi 7' },
-    price: 35,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198893/fireworks_400x400/fireworks_400x400/resized_framed_product_23_C_018_7_Inch_Besi_7.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 925,
-    name: { en: '14 Inch Besi 14', ms: '14 Inch Besi 14' },
-    price: 90,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198993/fireworks_400x400/fireworks_400x400/resized_framed_product_24_14_Inch_Besi_14.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076966/HunterBoom/cm3fmggy000050cl2g5esh2a4_fzrrwr.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 926,
-    name: { en: '18 Inch Besi 18', ms: '18 Inch Besi 18' },
-    price: 120,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198967/fireworks_400x400/fireworks_400x400/resized_framed_product_25_18_Inch_Besi_18.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076978/HunterBoom/cm3fmin2800060cl27xtic2ae_rhxy2g.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 927,
-    name: { en: 'Magic Stick (1 Minute)', ms: 'Magic Stick (1 Minute)' },
-    price: 10,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199007/fireworks_400x400/fireworks_400x400/resized_framed_Magic_Stick_1_Minute.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076989/HunterBoom/cm3fnyuab00000ckyfbrt8wvf_cvsdwm.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 928,
-    name: { en: '15 Kali Magic 15', ms: '15 Kali Magic 15' },
-    price: 15,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198975/fireworks_400x400/fireworks_400x400/resized_framed_product_27_15_Kali_Magic_15.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753076999/HunterBoom/cm3fo80ko00000cjhdgg929tm_nqqsui.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 929,
-    name: { en: '20 Kali Magic 20', ms: '20 Kali Magic 20' },
-    price: 20,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199043/fireworks_400x400/fireworks_400x400/resized_framed_product_28_20_Kali_Magic_20.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077010/HunterBoom/cm3foao1000010cl2dwks4ja7_ndcb6a.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 930,
-    name: { en: '30 Kali Magic 30', ms: '30 Kali Magic 30' },
-    price: 30,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199051/fireworks_400x400/fireworks_400x400/resized_framed_product_29_30_Kali_Magic_30.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077020/HunterBoom/cm3fobsv5000d0cmd1g4p6uer_rx8d89.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 931,
-    name: { en: '10 Kali Pili Rain 10', ms: '10 Kali Pili Rain 10' },
-    price: 20,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198952/fireworks_400x400/fireworks_400x400/resized_framed_product_30_10_Kali_Pili_Rain_10.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077031/HunterBoom/cm3foin1h000j0cmddfdtaa4z_dlvbtx.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 932,
-    name: { en: '388 Shot Machine Gun 388', ms: '388 Shot Machine Gun 388' },
-    price: 35,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198882/fireworks_400x400/fireworks_400x400/resized_framed_388_Shot_Machine_Gun_388.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 933,
-    name: { en: '888 Shot Machine Gun', ms: '888 Shot Machine Gun' },
-    price: 60,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198969/fireworks_400x400/fireworks_400x400/resized_framed_product_32_888_Shot_Machine_Gun_888.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 934,
-    name: { en: '688 Shot Machine Gun 688', ms: '688 Shot Machine Gun 688' },
-    price: 80,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198895/fireworks_400x400/fireworks_400x400/resized_framed_688_Shot_Machine_Gun_688.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 935,
-    name: { en: 'Blue Ocean Machine Gun', ms: 'Blue Ocean Machine Gun' },
-    price: 90,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199025/fireworks_400x400/fireworks_400x400/resized_framed_product_34_Blue_Ocean_Machine_Gun.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077041/HunterBoom/cm4nyh3v8000c0cjj37ic01jv_dhcjl2.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 936,
-    name: { en: 'Mancis', ms: 'Mancis' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198921/fireworks_400x400/fireworks_400x400/resized_framed_product_35_Mancis.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077051/HunterBoom/cm3h1c4ni00020cjq1xzo6888_mg9lzx.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 937,
-    name: { en: 'Gasing', ms: 'Gasing' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198999/fireworks_400x400/fireworks_400x400/resized_framed_Gasing.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3h504ye00000cky15mu1caf.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 938,
-    name: { en: 'Lotus', ms: 'Lotus' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198903/fireworks_400x400/fireworks_400x400/resized_framed_product_37_Lotus.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077072/HunterBoom/cm3h53ace00020cmi1mn98djd_udrjjb.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 939,
-    name: { en: 'Pop Pop', ms: 'Pop Pop' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199087/fireworks_400x400/fireworks_400x400/resized_framed_product_38_Pop_Pop.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 940,
-    name: { en: 'Pop Pop Besar', ms: 'Pop Pop Besar' },
-    price: 35,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198878/fireworks_400x400/fireworks_400x400/resized_framed_product_39_Pop_Pop_Besar.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 941,
-    name: { en: 'Cili Padi', ms: 'Cili Padi' },
-    price: 5,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198995/fireworks_400x400/fireworks_400x400/resized_framed_product_40_Cili_Padi.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077082/HunterBoom/cm3h5i48h00020cl21q1c1hj3_tvjbrd.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 942,
-    name: { en: 'Dragon Egg', ms: 'Dragon Egg' },
-    price: 15,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198971/fireworks_400x400/fireworks_400x400/resized_framed_product_41_Dragon_Egg.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077094/HunterBoom/cm3h5l1ha00040cid2pkh5fg2_b8fvwl.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 943,
-    name: { en: 'Dragon Egg Besar', ms: 'Dragon Egg Besar' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199022/fireworks_400x400/fireworks_400x400/resized_framed_product_42_Dragon_Egg_Besar.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077105/HunterBoom/cm3h5mitf00030ci89ilr128t_spn6ne.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 944,
-    name: { en: 'Naga 3 Minute', ms: 'Naga 3 Minute' },
-    price: 20,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199049/fireworks_400x400/fireworks_400x400/resized_framed_product_43_Naga_3_Minute.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077116/HunterBoom/cm3h61r5g00000cl5glngbzr5_qccqp9.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 945,
-    name: { en: 'Naga 3 Minute Besar', ms: 'Naga 3 Minute Besar' },
-    price: 30,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198884/fireworks_400x400/fireworks_400x400/resized_framed_product_44_Naga_3_Minute_Besar.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077126/HunterBoom/cm3h6944d00010cl9amkl4vj5_lmvyz7.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 946,
-    name: { en: 'Mancis Pop Pop', ms: 'Mancis Pop Pop' },
-    price: 40,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199033/fireworks_400x400/fireworks_400x400/resized_framed_product_45_Mancis_Pop_Pop.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077136/HunterBoom/cm4jh480a00090cl86kxk4e08_ddqqdp.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 947,
-    name: { en: 'Thunder Clap', ms: 'Thunder Clap' },
-    price: 45,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198906/fireworks_400x400/fireworks_400x400/resized_framed_product_46_Thunder_Clap.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077151/HunterBoom/cm3h762d800010cmb8vpi0nz1_pcf2fz.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 948,
-    name: { en: 'Thunder Clap Besar', ms: 'Thunder Clap Besar' },
-    price: 55,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198917/fireworks_400x400/fireworks_400x400/resized_framed_product_47_Thunder_Clap_Besar.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077161/HunterBoom/cm3h7a2v200010cl4bh3jbbyu_k6ikmj.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 950,
-    name: { en: 'Moon Travel', ms: 'Moon Travel' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199071/fireworks_400x400/fireworks_400x400/resized_framed_product_49_Moon_Travel.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077183/HunterBoom/cm3h84sp300070cl9h4oie88d_ezcal8.mp4',
-    category: 'traditional',
-    section: 'ROCKET SKY SHOW'
-  },
-  {
-    id: 951,
-    name: { en: 'Jet Flighter', ms: 'Jet Flighter' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199102/fireworks_400x400/fireworks_400x400/resized_framed_product_50_Jet_Flighter.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077193/HunterBoom/cm3h899ws00010cjs8ewv7uer_us6uda.mp4',
-    category: 'traditional',
-    section: 'ROCKET SKY SHOW'
-  },
-  {
-    id: 952,
-    name: { en: 'Big Butterfly', ms: 'Big Butterfly' },
-    price: 35,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199041/fireworks_400x400/fireworks_400x400/resized_framed_product_51_Big_Butterfly.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077203/HunterBoom/cm3h8b4p200060cl6ccz27jkc_jdfrqz.mp4',
-    category: 'traditional',
-    section: 'ROCKET SKY SHOW'
-  },
-  {
-    id: 953,
-    name: { en: '50 Shot Tikus 50', ms: '50 Shot Tikus 50' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199017/fireworks_400x400/fireworks_400x400/resized_framed_product_52_50_Shot_Tikus_50.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077213/HunterBoom/cm3h8dbwc00050cl4ez6v0k0n_kzjh8b.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 954,
-    name: { en: '100 Shot Tikus 100', ms: '100 Shot Tikus 100' },
-    price: 35,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198912/fireworks_400x400/fireworks_400x400/resized_framed_product_53_100_Shot_Tikus_100.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077224/HunterBoom/cm3h8efm200070cjrbdj7aygl_jpm9tn.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 955,
-    name: { en: '100 Shoot Flying Dragon 100', ms: '100 Shoot Flying Dragon 100' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199035/fireworks_400x400/fireworks_400x400/resized_framed_product_54_100_Shoot_Flying_Dragon_100.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077235/HunterBoom/cm3h8pi2e000a0cl95egh7b6x_u4cwcs.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 956,
-    name: { en: 'Jelly Fish LINK', ms: 'Jelly Fish (LINK)' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198886/fireworks_400x400/fireworks_400x400/resized_framed_product_55_Jelly_Fish_28LINK29.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077247/HunterBoom/cm3h9lci500050cl00a4f0lo5_c88xv6.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 957,
-    name: { en: 'Jelly Fish SINGLE', ms: 'Jelly Fish (SINGLE)' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198997/fireworks_400x400/fireworks_400x400/resized_framed_product_56_Jelly_Fish_28SINGLE29.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077256/HunterBoom/cm3h9h3d100000cl86cku7v81_kiqkl0.mp4',
-    category: 'traditional',
-    section: 'KIDS\" FIRECRACKERS'
-  },
-  {
-    id: 958,
-    name: { en: 'Romantic Fountain Fountain V Fireworks', ms: 'Romantic Fountain (Fountain V Fireworks)' },
-    price: 70,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198910/fireworks_400x400/fireworks_400x400/resized_framed_product_57_Romantic_Fountain_Fountain_V_.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077268/HunterBoom/cm3r0ujr500030cmjew7xet44_hzxgmd.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 959,
-    name: { en: 'Volcano Fireworks Fountain V Fireworks', ms: 'Volcano Fireworks (Fountain V Fireworks)' },
+    name: { en: 'Dragon Ball (1.75)', ms: 'Dragon Ball (1.75)' },
     price: 50,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199115/fireworks_400x400/fireworks_400x400/resized_framed_product_58_Volcano_Fireworks_Fountain_V_.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077279/HunterBoom/cm3r1vdh100080cl82g9w37lb_elesoe.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 960,
-    name: { en: 'Super Flash Rocket', ms: 'Super Flash Rocket' },
-    price: 55,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198989/fireworks_400x400/fireworks_400x400/resized_framed_Super_Flash_Rocket.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077290/HunterBoom/cm5c2q9uj000803l7h1nt59uk_dvl6n9.mp4',
-    category: 'traditional',
-    section: 'ROCKET SKY SHOW'
-  },
-  {
-    id: 961,
-    name: { en: 'Explosive Gold Rocket', ms: 'Explosive Gold Rocket' },
-    price: 75,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199037/fireworks_400x400/fireworks_400x400/resized_framed_product_60_Explosive_Gold_Rocket.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077299/HunterBoom/cm5xf09kq000f03l8g60yfqdf_t9camd.mp4',
-    category: 'traditional',
-    section: 'ROCKET SKY SHOW'
-  },
-  {
-    id: 962,
-    name: { en: 'Smoke 5 Color', ms: 'Smoke 5 Color' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198992/fireworks_400x400/fireworks_400x400/resized_framed_product_61_Smoke_5_Color.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077311/HunterBoom/cm3fou62o00030cl1fjz21a29_e6fbfx.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 963,
-    name: { en: 'Pokok Raya Fa Cai Shu', ms: 'Pokok Raya (Fa Cai Shu)' },
-    price: 20,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198963/fireworks_400x400/fireworks_400x400/resized_framed_product_62_Pokok_Raya_Fa_Cai_Shu.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077321/HunterBoom/cm3fpqma9000f0cl22cvnguto_fskowx.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 964,
-    name: { en: 'Pokok Raya Besar Big Fa Cai Shu', ms: 'Pokok Raya Besar (Big Fa Cai Shu)' },
-    price: 35,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199009/fireworks_400x400/fireworks_400x400/resized_framed_product_63_Pokok_Raya_Besar_Big_Fa_Cai_S.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077333/HunterBoom/cm5cjtbon000403k12i40hb2m_tzhznb.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 965,
-    name: { en: 'Mini Ice Cream', ms: 'Mini Ice Cream' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199099/fireworks_400x400/fireworks_400x400/resized_framed_product_64_Mini_Ice_Cream.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077342/HunterBoom/cm3fq24zv00060cig5djn3muq_arpgns.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 966,
-    name: { en: 'C026 7 Ice Cream 7', ms: 'C026 7 Ice Cream 7' },
-    price: 50,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198987/fireworks_400x400/fireworks_400x400/resized_framed_product_65_C_026_7_Ice_Cream_7.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 967,
-    name: { en: '15 Ice Cream 15', ms: '15 Ice Cream 15' },
-    price: 150,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198932/fireworks_400x400/fireworks_400x400/resized_framed_product_66_15_Ice_Cream_15.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077354/HunterBoom/cm3fqtqw800010cl16gec78r2_bbrxru.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 968,
-    name: { en: 'Peacock TIGA', ms: 'Peacock (TIGA)' },
-    price: 30,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199111/fireworks_400x400/fireworks_400x400/resized_framed_product_67_Peacock_28TIGA29.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077363/HunterBoom/cm3fqzobs00000cmh9wgh0cmd_ailyot.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 969,
-    name: { en: 'Peacock LIMA', ms: 'Peacock (LIMA)' },
-    price: 40,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198934/fireworks_400x400/fireworks_400x400/resized_framed_product_68_Peacock_28LIMA29.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077373/HunterBoom/cm3fr2ch100000cl7bcm5d512_gdhcvp.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 970,
-    name: { en: 'Tiga Segi Fountain', ms: 'Tiga Segi Fountain' },
-    price: 30,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199106/fireworks_400x400/fireworks_400x400/resized_framed_product_69_Tiga_Segi_Fountain.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077385/HunterBoom/cm3fsdlf900000cjt8l45gux4_qehixs.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 971,
-    name: { en: 'Tiga Segi Fountain Besar', ms: 'Tiga Segi Fountain Besar' },
-    price: 85,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198956/fireworks_400x400/fireworks_400x400/resized_framed_product_70_Tiga_Segi_Fountain_Besar.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077394/HunterBoom/cm4jiqbre00020cmaculigfcc_tir4jp.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 972,
-    name: { en: '12 Patten 160 Saat Fountain', ms: '12 Patten 160 Saat Fountain' },
-    price: 80,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199083/fireworks_400x400/fireworks_400x400/resized_framed_12_Patten_160_Saat_Fountain.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077404/HunterBoom/cm3fsxxwv00030clc0z503ddc_uokg9s.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 973,
-    name: { en: 'Colorful Fountain Box (210 Saat)', ms: 'Colorful Fountain Box (210 Saat)' },
-    price: 120,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198891/fireworks_400x400/fireworks_400x400/resized_framed_product_72_Colorful_Fountain_Box_210_Saa.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077415/HunterBoom/cm3mn2l4b00050cled2iye3sr_wjtw7z.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 974,
-    name: { en: 'Gasing Fountain', ms: 'Gasing Fountain' },
-    price: 50,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199097/fireworks_400x400/fireworks_400x400/resized_framed_product_73_Gasing_Fountain.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077426/HunterBoom/cm3ftn73h00000cjnfviaf7ku_a8gi9n.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 975,
-    name: { en: 'Surprise Fountain', ms: 'Surprise Fountain' },
-    price: 70,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199020/fireworks_400x400/fireworks_400x400/resized_framed_product_74_Surprise_Fountain.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077435/HunterBoom/cm3m79p9j000r0cmh5jfe2vzm_o76vzf.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 976,
-    name: { en: 'Happy Go Lucky', ms: 'Happy Go Lucky' },
-    price: 70,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198899/fireworks_400x400/fireworks_400x400/resized_framed_product_75_Happy_Go_Lucky.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077446/HunterBoom/cm4jiap5w00020cl79c888fe1_fpw885.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 977,
-    name: { en: 'Golden Harmony', ms: 'Golden Harmony' },
-    price: 70,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198928/fireworks_400x400/fireworks_400x400/resized_framed_product_76_Golden_Harmony.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077458/HunterBoom/cm5ci9aze000103jtdwub6akf_ybrcs8.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 978,
-    name: { en: 'Taycan Sparkle', ms: 'Taycan Sparkle' },
-    price: 70,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198960/fireworks_400x400/fireworks_400x400/resized_framed_product_77_Taycan_Sparkle.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077471/HunterBoom/cm3r0q9o500010cm7f1pu2au0_hnpfw9.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 979,
-    name: { en: 'Water Fall Sunset', ms: 'Water Fall Sunset' },
-    price: 50,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199062/fireworks_400x400/fireworks_400x400/resized_framed_product_78_Water_Fall_Sunset.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077482/HunterBoom/cm4jgwftl00020ckwe3z558ku_rw2wk2.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 980,
-    name: { en: 'Dragon Wand', ms: 'Dragon Wand' },
-    price: 30,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199093/fireworks_400x400/fireworks_400x400/resized_framed_product_79_Dragon_Wand.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077493/HunterBoom/cm4jgxxi000090ckxc1j497wx_w51ocw.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 981,
-    name: { en: 'Kipas Fountain', ms: 'Kipas Fountain' },
-    price: 60,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199001/fireworks_400x400/fireworks_400x400/resized_framed_product_80_Kipas_Fountain.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077503/HunterBoom/cm4jfx1d600000cl7487jh9o3_yozqmj.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 982,
-    name: { en: 'Magic Fountain', ms: 'Magic Fountain' },
-    price: 60,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198980/fireworks_400x400/fireworks_400x400/resized_framed_product_81_Magic_Fountain.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077515/HunterBoom/cm4jgx1ub00020cmkeq874t8v_rpmvpp.mp4',
-    category: 'traditional',
-    section: 'SPARKLE & SHINE - KIDS\" FAVORITE FIREWORKS!'
-  },
-  {
-    id: 983,
-    name: { en: 'Thunder King', ms: 'Thunder King' },
-    price: 15,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198973/fireworks_400x400/fireworks_400x400/resized_framed_product_82_Thunder_King.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077526/HunterBoom/cm3h9pkw600010claepry79lh_vunny5.mp4',
-    category: 'traditional',
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3i590xf00040cldgtzye8jj.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3r0mzzo000h0cjpcs6sgax5.mp4',
+    category: 'single',
     section: 'ONE SHOT, BIG BLAST!'
   },
   {
-    id: 984,
-    name: { en: 'Banana Kecil (0.8)', ms: 'Banana Kecil' },
-    price: 25,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198901/fireworks_400x400/fireworks_400x400/resized_framed_product_83_Banana_Kecil_280.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077535/HunterBoom/cm3hci5r800020cjvenpn6bgx_ldzcog.mp4',
-    category: 'traditional',
+    id: 98,
+    name: { en: '8 Shoot Roma Candle (0.8)', ms: '8 Shoot Roma Candle (0.8)' },
+    price: 26,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3hcr0y100000cmk7qy22qvc.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3hcscy400070cle9y0fc0qv.mp4',
+    category: 'single',
     section: 'ONE SHOT, BIG BLAST!'
   },
   {
-    id: 985,
-    name: { en: 'Banana Besar (1.2) (1.2)', ms: 'Banana Besar (1.2)' },
-    price: 45,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199063/fireworks_400x400/fireworks_400x400/resized_framed_product_84_Banana_Besar_281.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077545/HunterBoom/cm3hcly4100000clee9ix79ap_noe5jk.mp4',
-    category: 'traditional',
+    id: 99,
+    name: { en: 'Wolf Howl Banana', ms: 'Wolf Howl Banana' },
+    price: 38,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdt755000i04l2fxct6i9c.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfdmdqvf001e04il865k07md.mp4',
+    category: 'single',
     section: 'ONE SHOT, BIG BLAST!'
   },
   {
-    id: 986,
-    name: { en: 'Double Shoot Banana Besar (1.75) 1.75', ms: 'Double Shoot Banana Besar (1.75)' },
-    price: 55,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199108/fireworks_400x400/fireworks_400x400/resized_framed_product_85_Double_Shoot_Banana_Besar_281.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077556/HunterBoom/cm3hcptvc00030cjwacdy2wid_ize2rw.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 987,
-    name: { en: 'Dragon Ball (1.75) 1.75', ms: 'Dragon Ball (1.75) 1.75' },
-    price: 50,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198914/fireworks_400x400/fireworks_400x400/resized_framed_product_86_Dragon_Ball_281.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077567/HunterBoom/cm3r0mzzo000h0cjpcs6sgax5_ox6hqc.mp4',
-    category: 'traditional',
+    id: 100,
+    name: { en: '(Big) Thunder Double Bang', ms: '(Big) Thunder Double Bang' },
+    price: 24,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdsc92000a04l880en5ya1.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhzgb0x000d04l80v80ft2m.mp4',
+    category: 'single',
     section: 'ONE SHOT, BIG BLAST!'
   },
   {
-    id: 988,
-    name: { en: '8 Shoot Roma Candle 0.8', ms: '8 Shoot Roma Candle (0.8)' },
-    price: 45,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199013/fireworks_400x400/fireworks_400x400/resized_framed_product_87_8_Shoot_Roma_Candle_280.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077577/HunterBoom/cm3hcscy400070cle9y0fc0qv_n2ni5r.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
+    id: 101,
+    name: { en: '(Big) Flower Double Bang', ms: '(Big) Flower Double Bang' },
+    price: 28,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdsqyy000c04l87a6b7sxs.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfdmblri000804jydncsh3ec.mp4',
+    category: 'single',
+    section: 'ONE SHOT, BIG BLAST!'
   },
   {
-    id: 989,
-    name: { en: '4 25 Shoot Cake 4', ms: '4 25 Shoot Cake 4' },
-    price: 35,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199046/fireworks_400x400/fireworks_400x400/resized_framed_product_88_4_25_Shoot_Cake_4_25.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077588/HunterBoom/cm4shf52l000703mteyab9izo_tpvhu7.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
+    id: 102,
+    name: { en: '9" 552 Shoot Cake God for Wealth (Straight + V Shape)', ms: '9" 552 Shoot Cake God for Wealth (Straight + V Shape)' },
+    price: 1988,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3in76t2000g0cl350rph4vn.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4krnp1600000cla7z2peru8.mp4',
+    category: 'blinkbox',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
   },
   {
-    id: 990,
-    name: { en: '4 36 Shoot Cake 4', ms: '4 36 Shoot Cake 4' },
-    price: 45,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198942/fireworks_400x400/fireworks_400x400/resized_framed_product_89_4_36_Shoot_Cake_4_36.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077598/HunterBoom/cm4shhj0r000003mdfbe23njd_ukabrl.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 991,
-    name: { en: '4 49 Shoot Cake (ABCD) 4', ms: '4 49 Shoot Cake (ABCD) 4' },
-    price: 55,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198982/fireworks_400x400/fireworks_400x400/resized_framed_product_90_4_49_Shoot_Cake_28ABCD29_4_49.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077608/HunterBoom/cm4shhzku000903mt4o59h96b_es7x0u.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 992,
-    name: { en: 'Special Fireworks #92', ms: 'Special Fireworks #92' },
-    price: 50,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198882/fireworks_400x400/fireworks_400x400/resized_framed_388_Shot_Machine_Gun_388.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4shk2s0000g03ju9jme3n1g.mp4',
-    category: 'traditional',
-    section: 'FOUNTAIN BLAST'
-  },
-  {
-    id: 993,
-    name: { en: '4138 Shoot Cake', ms: '4138 Shoot Cake' },
-    price: 130,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199054/fireworks_400x400/fireworks_400x400/resized_framed_product_92_4138_Shoot_Cake.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077630/HunterBoom/cm4jy49dl00120cky70snaevx_esxtka.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 994,
-    name: { en: '5138 Shoot Cake (Single Abcd) 5', ms: '5138 Shoot Cake (Single Abcd) 5' },
-    price: 250,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199079/fireworks_400x400/fireworks_400x400/resized_framed_5138_Shoot_Cake_Single_Abcd_5.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4shko51000i03ju5o9q795y.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 995,
-    name: { en: '5414 Shoot Cake (ABC) (Straight V Shape) Bb51', ms: '5414 Shoot Cake (ABC) (Straight V Shape) Bb51' },
-    price: 650,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198989/fireworks_400x400/fireworks_400x400/resized_framed_Super_Flash_Rocket.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ii2fc9000c0cjsdadg2xrk.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 997,
-    name: { en: '5138 Shoot Cake (ABC) (V Shape) Bb5138 C', ms: '5138 Shoot Cake (ABC) (V Shape) Bb5138 C' },
-    price: 650,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199039/fireworks_400x400/fireworks_400x400/resized_framed_5138_Shoot_Cake_ABC_V_Shape_Bb5138_C.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ii591600000ci33jtohs4d.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 998,
-    name: { en: '5138 Shoot Cake (ABC) (V Shape) Bb5138 D', ms: '5138 Shoot Cake (ABC) (V Shape) Bb5138 D' },
-    price: 650,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198983/fireworks_400x400/fireworks_400x400/resized_framed_5138_Shoot_Cake_ABC_V_Shape_Bb5138_D.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ii5qox00000cjx6adr5uf7.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 999,
-    name: { en: '5414 Shoot Cake Thor (V Shape) 5414', ms: '5414 Shoot Cake Thor (V Shape) 5414' },
-    price: 750,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199101/fireworks_400x400/fireworks_400x400/resized_framed_5414_Shoot_Cake_Thor_V_Shape_5414.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3m7ak5r000g0ckwaav6fnq0.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1000,
-    name: { en: '5414 Shoot Cake Thanos (V Shape) 5414', ms: '5414 Shoot Cake Thanos (V Shape) 5414' },
-    price: 750,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198936/fireworks_400x400/fireworks_400x400/resized_framed_5414_Shoot_Cake_Thanos_V_Shape_5414.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3m7a56r000g0cmgc2qa7l1w.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1001,
-    name: { en: '5414 Shoot Cake Rule The Universe 5414', ms: '5414 Shoot Cake Rule The Universe 5414' },
-    price: 750,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198950/fireworks_400x400/fireworks_400x400/resized_framed_5414_Shoot_Cake_Rule_The_Universe_5414.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1002,
-    name: { en: '5552 Shoot Cake Four Symbols Mini (V Shape) 5', ms: '5552 Shoot Cake Four Symbols Mini (V Shape) 5' },
-    price: 950,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198897/fireworks_400x400/fireworks_400x400/resized_framed_5552_Shoot_Cake_Four_Symbols_Mini_V_Shape_5.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1003,
-    name: { en: '5552 Shoot Cake Xiong He Xin Xi (Straight V S', ms: '5552 Shoot Cake Xiong He Xin Xi (Straight V S' },
-    price: 950,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199011/fireworks_400x400/fireworks_400x400/resized_framed_5552_Shoot_Cake_Xiong_He_Xin_Xi_Straight_V_S.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4queryp000403mkeyk73q6o.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1004,
-    name: { en: '5552 Shoot Cake Fu Shou An Kang (V Shape) 555', ms: '5552 Shoot Cake Fu Shou An Kang (V Shape) 555' },
-    price: 950,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198940/fireworks_400x400/fireworks_400x400/resized_framed_5552_Shoot_Cake_Fu_Shou_An_Kang_V_Shape_555.jpg',
-    videoUrl: '',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1005,
-    name: { en: '8138 Shoot Cake', ms: '8138 Shoot Cake' },
-    price: 450,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199068/fireworks_400x400/fireworks_400x400/resized_framed_product_104_8138_Shoot_Cake.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077728/HunterBoom/cm4jivsef00010cl21ztbbh6b_g6udgn.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1006,
-    name: { en: '7276 Shoot Milan Night (Straight V Shape) 727', ms: '7276 Shoot Milan Night (Straight V Shape) 727' },
-    price: 900,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199055/fireworks_400x400/fireworks_400x400/resized_framed_7276_Shoot_Milan_Night_Straight_V_Shape_727.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5dl1fcx000303jgai1h7hgw.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1007,
-    name: { en: '6414 Shoot Cake I Am The Only One (V Shape) 6', ms: '6414 Shoot Cake I Am The Only One (V Shape) 6' },
-    price: 900,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199065/fireworks_400x400/fireworks_400x400/resized_framed_6414_Shoot_Cake_I_Am_The_Only_One_V_Shape_6.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3r0gjys00000djkaama012h.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1008,
-    name: { en: '9138 Shoot Cake', ms: '9138 Shoot Cake' },
-    price: 450,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199016/fireworks_400x400/fireworks_400x400/resized_framed_product_117_9138_Shoot_Cake.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077868/HunterBoom/cm598lsfi000003l55pwdcx4b_j0398m.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1009,
-    name: { en: '8036 Shoot Sound King 836', ms: '8036 Shoot Sound King 836' },
-    price: 150,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199005/fireworks_400x400/fireworks_400x400/resized_framed_8036_Shoot_Sound_King_836.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4qrpog900010cl08qqi6byz.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1010,
-    name: { en: '9138 Shoot Cake Fu Lu Shou (Straight V Shape', ms: '9138 Shoot Cake Fu Lu Shou (Straight V Shape' },
-    price: 650,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198944/fireworks_400x400/fireworks_400x400/resized_framed_9138_Shoot_Cake_Fu_Lu_Shou_Straight_V_Shape.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4kyn2zf00000cl6evyfasc7.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
-  },
-  {
-    id: 1011,
-    name: { en: '9414 Shoot Cake Fu Lu Shou Straight V Shape 9414', ms: '9414 Shoot Cake Fu Lu Shou (Straight V Shape)' },
-    price: 1100,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198908/fireworks_400x400/fireworks_400x400/resized_framed_9414_Shoot_Cake_Fu_Lu_Shou_Straight_V_Shape_9414.jpg',
+    id: 103,
+    name: { en: '9" 414 Shoot Cake Fu Lu Shou (Straight + V Shape)', ms: '9" 414 Shoot Cake Fu Lu Shou (Straight + V Shape)' },
+    price: 1088,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3imke3v00090cl32tdg8t46.png',
     videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4kynjnt00050cjo9a2xc10a.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
+    category: 'blinkbox',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
   },
   {
-    id: 1012,
-    name: { en: '9138 Shoot Cake God For Wealth (Straight V S', ms: '9138 Shoot Cake God For Wealth (Straight V S' },
-    price: 650,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198985/fireworks_400x400/fireworks_400x400/resized_framed_9138_Shoot_Cake_God_For_Wealth_Straight_V_S.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4krsuma00000cl42y8x7x95.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
+    id: 104,
+    name: { en: '9" 138 Shoot Cake Fu Lu Shou (Straight + V Shape)', ms: '9" 138 Shoot Cake Fu Lu Shou (Straight + V Shape)' },
+    price: 520,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3imke3u000p0ckv65za4mj1.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4kynjnt00050cjo9a2xc10a.mp4',
+    category: 'blinkbox',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
   },
   {
-    id: 1013,
-    name: { en: '9552 Shoot Cake God For Wealth (Straight V Sh', ms: '9552 Shoot Cake God For Wealth (Straight V Sh' },
-    price: 2500,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199031/fireworks_400x400/fireworks_400x400/resized_framed_9552_Shoot_Cake_God_For_Wealth_Straight_V_Sh.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4krs82800040cme2rrdeu89.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
+    id: 105,
+    name: { en: '9" 138 Shoot Cake God for Wealth (Straight + V Shape)', ms: '9" 138 Shoot Cake God for Wealth (Straight + V Shape)' },
+    price: 520,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3in76t0000b0cl6bacn5vyz.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4krnp1600000cla7z2peru8.mp4',
+    category: 'blinkbox',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
   },
   {
-    id: 1014,
-    name: { en: '9138 Shoot Cake Fortune Four 9', ms: '9138 Shoot Cake Fortune Four 9' },
-    price: 650,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199073/fireworks_400x400/fireworks_400x400/resized_framed_9138_Shoot_Cake_Fortune_Four_9.jpg',
+    id: 106,
+    name: { en: '9" 138 Shoot Cake Fortune Four', ms: '9" 138 Shoot Cake Fortune Four' },
+    price: 535,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iniaet00000cl83wgx861g.png',
     videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3r2lnw200060cla8ua8d5er.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
+    category: 'blinkbox',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
   },
   {
-    id: 1015,
-    name: { en: '9552 Shoot Cake Fortune Four 9', ms: '9552 Shoot Cake Fortune Four 9' },
-    price: 2500,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199069/fireworks_400x400/fireworks_400x400/resized_framed_9552_Shoot_Cake_Fortune_Four_9.jpg',
+    id: 107,
+    name: { en: '9" 552 Shoot Cake Fortune Four', ms: '9" 552 Shoot Cake Fortune Four' },
+    price: 2080,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ini8ya00000cl65haqgb8i.png',
     videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3r2lnw200060cla8ua8d5er.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
+    category: 'blinkbox',
+    section: 'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!'
   },
   {
-    id: 1016,
-    name: { en: '9138 Shoot Cake Zhong Lu Chai Shen 9138', ms: '9138 Shoot Cake Zhong Lu Chai Shen 9138' },
-    price: 650,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753199095/fireworks_400x400/fireworks_400x400/resized_framed_9138_Shoot_Cake_Zhong_Lu_Chai_Shen_9138.jpg',
-    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm598y327000003l380dw0qhh.mp4',
-    category: 'traditional',
-    section: 'MERDEKA FIREWORKS'
+    id: 108,
+    name: { en: '4" 138 Shoot Cake - Galaxy Premium (ABCD Random)', ms: '4" 138 Shoot Cake - Galaxy Premium (ABCD Random)' },
+    price: 168,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3inoncq00030cl8gki96kbh.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfi01hid000204l2hmsx5re3.mp4',
+    category: 'galaxy',
+    section: 'ROCKET SKY SHOW'
   },
   {
-    id: 1017,
-    name: { en: '949 Shoot Cake', ms: '949 Shoot Cake' },
+    id: 109,
+    name: { en: '4" 49 Shoot Cake - Galaxy Premium (1 SET) ABCD', ms: '4" 49 Shoot Cake - Galaxy Premium (1 SET) ABCD' },
     price: 200,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198954/fireworks_400x400/fireworks_400x400/resized_framed_product_116_949_Shoot_Cake.jpg',
-    videoUrl: 'http://res.cloudinary.com/de8w3ykvy/video/upload/v1753077856/HunterBoom/cm597rqi4000u03mqe0ml5xhk_qmk1ha.mp4',
-    category: 'traditional',
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmduv0v000904le1lgf5rgi.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfgl014d000504l53rpx20yh.mp4',
+    category: 'galaxy',
+    section: 'ROCKET SKY SHOW'
+  },
+  {
+    id: 110,
+    name: { en: '5" 138 Shoot Cake - Link Fireworks Classic', ms: '5" 138 Shoot Cake - Link Fireworks Classic' },
+    price: 228,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3icgvj700010cl3am9ycbgj.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4l31g5200010cmq8qeahfje.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 111,
+    name: { en: '5" 138 Shoot Cake Single', ms: '5" 138 Shoot Cake Single' },
+    price: 238,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdrgtf000904l5aih3bmtu.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4shko51000i03ju5o9q795y.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 112,
+    name: { en: '5" 414 Shoot Cake Spring', ms: '5" 414 Shoot Cake Spring' },
+    price: 688,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm487kcdf00020ckz8sb41ou4.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ii2fc9000c0cjsdadg2xrk.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 113,
+    name: { en: '5" 414 Shoot Cake Summer', ms: '5" 414 Shoot Cake Summer' },
+    price: 688,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm487ratk00000cl3aglmfhit.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ii399k00000clg655khz7o.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 114,
+    name: { en: '5" 138 Shoot Cake Autumn', ms: '5" 138 Shoot Cake Autumn' },
+    price: 688,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm487u7xt00030cl8hei48iyg.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ii591600000ci33jtohs4d.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 115,
+    name: { en: '5" 138 Shoot Cake Winter', ms: '5" 138 Shoot Cake Winter' },
+    price: 688,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm487ybwd00020ciehs8s6u8t.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ii5qox00000cjx6adr5uf7.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 116,
+    name: { en: '5" 414 Shoot Cake Thor', ms: '5" 414 Shoot Cake Thor' },
+    price: 688,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm46wikjd00060cmq6kh74853.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3m7ak5r000g0ckwaav6fnq0.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 117,
+    name: { en: '5" 414 Shoot Cake Thanos', ms: '5" 414 Shoot Cake Thanos' },
+    price: 688,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iap0kk00000cmf5ymz723b.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3m7a56r000g0cmgc2qa7l1w.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 118,
+    name: { en: '5" 414 Shoot Cake Rule the Universe', ms: '5" 414 Shoot Cake Rule the Universe' },
+    price: 688,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm5dnn3l3000p03ky05gad6h2.jpg',
+    videoUrl: '',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 119,
+    name: { en: '5" 552 Shoot Cake Four Symbols Mini', ms: '5" 552 Shoot Cake Four Symbols Mini' },
+    price: 780,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ia8hcy00000cma0h8ifsrc.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmff61mmc000f04ibbqdjggxj.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 120,
+    name: { en: '5" 552 Shoot Cake Xiong He Xin Xi', ms: '5" 552 Shoot Cake Xiong He Xin Xi' },
+    price: 780,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm46w0utb00010cmb5ek22tvd.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4queryp000403mkeyk73q6o.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 121,
+    name: { en: '5" 552 Shoot Cake Fu Shou An Kang', ms: '5" 552 Shoot Cake Fu Shou An Kang' },
+    price: 780,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iaynak00080cmm142qdlhn.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmff68nxf000904js07xm9z3z.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 122,
+    name: { en: '8" 138 Shoot Cake - BM Signature', ms: '8" 138 Shoot Cake - BM Signature' },
+    price: 428,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm46wm93d00010cl6b2y0ang7.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfdlavb6000n04l5bei4aiep.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 123,
+    name: { en: '7" 276 Shoot Milan Night', ms: '7" 276 Shoot Milan Night' },
+    price: 688,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3il8uks000s0cl93ykf3sy6.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5dl1fcx000303jgai1h7hgw.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 124,
+    name: { en: '6" 414 Shoot Cake I Am the Only One', ms: '6" 414 Shoot Cake I Am the Only One' },
+    price: 728,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3il3nqz000u0cl1a41o5u9z.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm3r0gjys00000djkaama012h.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 125,
+    name: { en: '9" 138 Shoot Cake - Mini Classic', ms: '9" 138 Shoot Cake - Mini Classic' },
+    price: 400,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3n49gsr00030cic6af3dhib.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5c31syk000i03mqergi0vd4.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 126,
+    name: { en: '4" 16 Shoot Cake', ms: '4" 16 Shoot Cake' },
+    price: 20,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdo9o3000404jxdz9w0z5f.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfdmeptr000c04ldbo9ug1oa.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 127,
+    name: { en: '5" 138 Shoot Cake V-Shape Single', ms: '5" 138 Shoot Cake V-Shape Single' },
+    price: 238,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdqbzw000504l24ocx8p81.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cmfhze855000604l83zq4hnpe.mp4',
+    category: 'shootcake',
+    section: 'ONE SHOT, BIG BLAST!'
+  },
+  {
+    id: 128,
+    name: { en: '8" 036 Shoot Sound King', ms: '8" 036 Shoot Sound King' },
+    price: 178,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdv9m7000304i2bagleaqx.jpg',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4qrpog900010cl08qqi6byz.mp4',
+    category: 'johor',
     section: 'MERDEKA FIREWORKS'
   },
   {
-    id: 1019,
-    name: { en: '5276 Shoot Cake Classic (V Shape) 5276', ms: '5276 Shoot Cake Classic (V Shape) 5276' },
-    price: 1000,
-    image: 'https://res.cloudinary.com/de8w3ykvy/image/upload/v1753198965/fireworks_400x400/fireworks_400x400/resized_framed_5276_Shoot_Cake_Classic_V_Shape_5276.jpg',
+    id: 129,
+    name: { en: '9" 138 Shoot Cake Zhong Lu Chai Shen', ms: '9" 138 Shoot Cake Zhong Lu Chai Shen' },
+    price: 588,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3in9k24001m0cmbawlc2c40.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm598y327000003l380dw0qhh.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 130,
+    name: { en: '9" 49 Shoot Cake Uproar In Heaven', ms: '9" 49 Shoot Cake Uproar In Heaven' },
+    price: 228,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ip7t0k000c0cmn37aqdey4.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm597rqi4000u03mqe0ml5xhk.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 131,
+    name: { en: '9" 138 Shoot Cake Wu Kong', ms: '9" 138 Shoot Cake Wu Kong' },
+    price: 600,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ip8x9k000g0cjz7l1qf8vo.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm598lsfi000003l55pwdcx4b.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 132,
+    name: { en: '5" 276 Shoot Cake Classic', ms: '5" 276 Shoot Cake Classic' },
+    price: 488,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cmfmdpcm8000704ky7fizgzbh.jpg',
     videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4la2rms00130cl71m8b1hdf.mp4',
-    category: 'traditional',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 133,
+    name: { en: '9" 276 Shoot Cake Golden Win', ms: '9" 276 Shoot Cake Golden Win' },
+    price: 1488,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3ioggs4000b0cl7eu2kcdej.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5cj5yoc000803js4xadhqd4.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 134,
+    name: { en: '9" 138 Shoot Cake Hong Yun Dang Tou', ms: '9" 138 Shoot Cake Hong Yun Dang Tou' },
+    price: 520,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iggw71000n0cjm0cdwb1i3.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ktocdv00000cl84989dzmo.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 135,
+    name: { en: '9" 138 Shoot Cake Xin Xiang Shi Cheng', ms: '9" 138 Shoot Cake Xin Xiang Shi Cheng' },
+    price: 520,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3iginma000q0cjm7xbwflx2.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm599gv4o000303js31vc38od.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 136,
+    name: { en: '9" 138 Shoot Cake Huang Jin Man Wu', ms: '9" 138 Shoot Cake Huang Jin Man Wu' },
+    price: 520,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3igkrny000s0cjm6kdr5mxa.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4ktontw00050clabnkqag8q.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 137,
+    name: { en: '9" 138 Shoot Cake Lan Feng Song Xi', ms: '9" 138 Shoot Cake Lan Feng Song Xi' },
+    price: 520,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3igoyxw00080cmh8e8pf103.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm599r9dr000r03l2f6j0hvsn.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 138,
+    name: { en: '9" 138 Shoot Cake Zi Qi Dong Lai', ms: '9" 138 Shoot Cake Zi Qi Dong Lai' },
+    price: 520,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3igrssf00090clh30bg21s1.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm5gu6nob000103lbd6t8hu40.mp4',
+    category: 'johor',
+    section: 'MERDEKA FIREWORKS'
+  },
+  {
+    id: 139,
+    name: { en: '9" 276 Shoot Cake Double Happiness', ms: '9" 276 Shoot Cake Double Happiness' },
+    price: 1088,
+    image: 'https://emofly.b-cdn.net/hbd_exvhac6ayb3ZKT/width:1080/plain/https://storage.googleapis.com/takeapp/media/cm3imprk300070cjhdows0tyt.png',
+    videoUrl: 'https://storage.googleapis.com/takeapp/media/cm4oddw2d00040cmqd9dv0lvy.mp4',
+    category: 'johor',
     section: 'MERDEKA FIREWORKS'
   },
 ];
 
 export const sections = [
-  'POP-POP',
-  'ROCKET SKY SHOW',
   'RED DRAGON FIRECRACKERS',
   'SPARKLE & SHINE - KIDS" FAVORITE FIREWORKS!',
   'KIDS" FIRECRACKERS',
-  'MERDEKA FIREWORKS'
+  'FOUNTAIN BLAST',
+  'ROCKET SKY SHOW',
+  'ONE SHOT, BIG BLAST!',
+  'MERDEKA FIREWORKS',
 ];
